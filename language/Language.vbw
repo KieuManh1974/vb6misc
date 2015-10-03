@@ -1,0 +1,8 @@
+Program = 44, 58, 1252, 514, 
+clsSymbol = 66, 87, 933, 543, 
+clsUnit = 88, 116, 717, 572, 
+clsField = 110, 145, 739, 601, 
+clsRange = 132, 174, 761, 630, C
+clsSymbolTable = 154, 203, 783, 659, C
+Compiler = 44, 58, 673, 514, Z
+clsOutput = 0, 0, 629, 456, C

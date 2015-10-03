@@ -1,0 +1,9 @@
+frmDisplay = 66, 87, 695, 543, Z, 22, 29, 577, 485, C
+clsInfo = 44, 58, 911, 514, 
+clsVector = 66, 87, 695, 543, C
+clsInfoList = 88, 116, 717, 572, 
+clsMass = 132, 174, 761, 630, 
+IRender = 0, 0, 629, 456, C
+clsSpring = 110, 145, 977, 601, C
+clsFix = 132, 174, 761, 630, 
+IShape = 22, 29, 889, 485, C
