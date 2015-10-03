@@ -1,0 +1,18 @@
+ws0 := [REPEAT IN 0 TO 32 MIN 0];
+ws1 := [REPEAT IN 0 TO 32];
+identifier := REPEAT IN CASE 'a' TO 'z', '0' TO '9', '!"£$%^&*_-+=;:@#~<>/?';
+variable := AND (IN CASE 'a' TO 'z', '_'), (REPEAT IN CASE 'a' TO 'z', '_', '0' TO '9' MIN 0);
+number := REPEAT IN '0' TO '9';
+hex := AND '&', (REPEAT IN '0' TO '9', CASE 'a' TO 'f');
+type := identifier;
+parameter := AND type, ws1, variabler;
+parameters := AND '(', ws0, (LIST parameter, (AND ws0, ',', ws0)), ')';
+section_type := OR CASE 'LOOP', CASE 'OPERATOR';
+named_section := AND ? section_type, ws0, OPTIONAL type, ws0, variable, ws0, parameters, ws0, '{', ws0, code, ws0, '}';
+code := '';
+function := AND identifier, '(', ws0, (LIST expression, (AND ws0, ',', ws0)), ')';
+binary_operator := AND expression, (IN '!£$%^&*_-+=:;@#~<>/?'), expression;
+unary_operator := AND (IN '!£$%^&*_-+=:;@#~<>/?'), expression;
+bracketed_expression := AND '(', ws0, expression, ws0, ')';
+expression := OR number, variable, function, binary_operator, unary_operator, bracketed_expression;
+

@@ -1,0 +1,11 @@
+ws list in 000 to 032 | min 0 | |
+identifier and in . # _ 0 to 9 a to z | list in _ 0 to 9 a to z | | | |
+text and omit ` list or \\ \` in 032 to 255  not `  | | | omit ` | |
+block and omit { ws  structlist ws omit } ws | |
+structlist list or text struct | del  ws min 0 | |
+paramlist list parameter del and ws ; ws | min 0 | |
+parameter and opt and identifier ws omit : | | ws or text block | | |
+parameters and omit ( ws paramlist ws omit ) ws | |
+struct and identifier ws opt parameters | ws opt block | | |
+weblang and ws structlist ws eos | |
+

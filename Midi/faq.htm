@@ -1,0 +1,199 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<HTML>
+<HEAD>
+   <STYLE>
+     <!--
+      {font-family: Courier New;
+          font-size: 10pt;}
+      .RM  {color: #00A000};
+      .KW  {color: #0000A0};
+      //-->
+   </STYLE>
+
+	<TITLE>More midi info & FAQ</TITLE>
+</HEAD>
+
+<BODY BGCOLOR=#f0f0f0>
+<H1>Midi IN FAQ and info.</H1>
+<H2>FAQ</H2>
+<P><B>When I use Channel 1 on my keyboard my Data Status is 144. Channel 2
+results 145 and so on. Is this the right way how I can extract the Channel number?
+</B></P>
+<P>Channel 1 is behind the scenes channel 0. The value of 144 stands for 0x90
+(Hexadecimal value) and is a Note On message. A Note On message on channel 5
+would be 0x94. So the first (hex) digit or nibble describes the type of midi
+message, the second the channel</P>
+<HR>
+<P><B>Does the Midi Device automatically generate a MTC (Midi TimeCode)
+when pressing a key? Can I extract even this Timecode from the dwparam1 variable?
+</B></P>
+<P>Midi TimeCode is allways generated from the moment the midiStart API-function
+is called, until the midiStop API-function is called. You don't find it in dwParam1,
+but in dwParam2</P>
+<HR>
+<P><B>If I don't use the Callback function, but instead connect the MidiIn to
+the MidiOut Port, how can I then read the incoming data from the port?
+</B></P>
+<P>Without a callback function, you cannot read incoming data. With the API-function
+midiConnect, you can link the midi in port to the midi out. This is called
+midi THRU. But if non of the ports are opened with a callback, you cannot access
+the data.</P>
+<HR>
+<P><B>Do you have a VB source code sample for getting the notes 
+that come into the Midi IN Port?
+</B></P>
+<P>I have made a small example as a respons to the demand. It's packed
+together with this text you're reading.
+</P>
+<HR>
+<P><B>How can I use midiStreamOut ???
+MidiStreamOpen function doesn't return any error, midiOutPrepareHeader
+doesnt return any error and when I call MidiStreamOut, windows generates an
+error. Do you have any suggestions ?
+</B></P>
+<P>
+The trouble you stumbled on, I suppose, is the same one that restricted the
+things I could do within my project.
+If you 've downloaded the BulkDump-code you can see I attached a html-file
+(sysex.htm) discribing the problem I encountered. It envolved the MHDR_DONE
+flag (dwFlags) in the MIDIHDR structure. Normally, this flag should be set
+by the driver, to indicate it has processed the midi data. But it never did
+and I don't know why. The consequence is, you cannot unprepare the
+midi-buffer, and proceed, without forcing it by setting the flag yourself,
+to MHDR_DONE. Now, I needed it, to manage midi long messages, something more
+difficult than handling short messages. While testing everything I could
+think off, I also tried the midiStream-functions. It's some time ago, but I
+think it had the same problem as with long messages. Maybe you can attain
+what you want to do, also by forcing this dwFlags member.
+I searched a lot for answers, attached my question to my midi-project, but,
+so far, nobody could help me there.<BR>
+So, I am still waiting and hope somebody ever will.</P>
+<HR>
+<P><B>My First C (it should be C1 or?) on the keyboard 
+has the value 36. Your isNote function returns C2.</B></P>
+<P>I don't know what's right. When I give up, note no.36 in Cubase (I'm sure you know 
+this music creation program), it returns C1. But when I look it up in my Sound 
+Canvas manual and other midi documents, they call it C2. Mostly articles say the 
+middle C is note nr 60, is C4.</P>
+<HR>
+<P><B>Status = (dwparam1 Mod 256)<BR>
+This returns 144 + Channel No. Does 144 always mean that the current status is 
+Receiving Data or can I expect other values too?</B></P>
+<P>Your calculation of the first byte or status byte in dwParam1 is correct.
+The status byte holds 2 values : midi msg type and channel.
+144 is the full byte, displayed in hex as &amp;H90; first nibble is 0, second is 9.
+So it is not 144+Channel No, but 9 + Channel No, when you 'talk' about it. 
+On the other hand, when you want to calculate or assemble a new Status byte 
+(for Note On message ~ 9), in code it could be:<PRE>
+   Status = 144 + ChNr
+   Status = &amp;H90 + ChNr
+   Status = &amp;H90 And ChNr
+   Status = (9 * 16) And ChNr</PRE>
+This lines all have the same result. But in a way, the last way is the most 
+correct one. Multiplying with 16 is the same as shifting 4-bits to the left (one 
+nibble). A C<SMALL>++</SMALL> program surely would be written that way. 
+</P>
+<P>It's really important you understand this mix of bits, nibbles, bytes, ...</P>
+<P>wMsg is the parameter that is holding <B>Receiving Data</B> and 
+other type of messages, not dwParam1. To make it clear:</P>
+<P><SPAN CLASS="KW">wMsg</SPAN> holds the <SPAN CLASS="KW">driver 
+message </SPAN>type , the second or <SPAN CLASS="RM">senior nibble</SPAN>
+(always right to left) of the <SPAN CLASS="RM">status byte</SPAN> in <SPAN CLASS="RM">
+dwParam1 </SPAN>holds the <SPAN CLASS="RM">midi 
+message </SPAN>type. This can be a little confusing.</P>
+<HR>
+
+<H2>More Info about the midiIN callback-function</H2>
+<P>Opening the midiIn port with a callback-function in VB could look like this:</P>
+<PRE>
+  midiError = midiInOpen(hMidiIN, mMPU401IN, <SPAN CLASS="KW">AddressOf </SPAN>MidiIN_Proc, 0, CALLBACK_FUNCTION)
+</PRE>
+<P align=right>
+<SMALL>mMPU401IN =  midiIn Device Number, must be a MPU401 port; is mostly zero</SMALL> </P>
+<P>The structure of the code of the callback-function then would be:</P>
+<PRE>
+  <SPAN CLASS="KW">Public Sub </SPAN>MidiIN_Proc(ByVal hmIN <SPAN CLASS="KW">As Long</SPAN>, ByVal wMsg <SPAN CLASS="KW">As Long</SPAN>, ByVal dwInstance <SPAN CLASS="KW">As Long</SPAN>, ByVal dwParam1 <SPAN CLASS="KW">As Long</SPAN>, ByVal dwParam2 <SPAN CLASS="KW">As Long</SPAN>)
+      <SPAN CLASS="KW">On Error Resume Next
+      Select Case </SPAN>wMsg
+          <SPAN CLASS="KW">Case </SPAN>MM_MIM_OPEN
+          <SPAN CLASS="KW">Case </SPAN>MM_MIM_CLOSE
+          <SPAN CLASS="KW">Case </SPAN>MM_MIM_DATA
+          <SPAN CLASS="KW">Case </SPAN>MM_MIM_LONGDATA
+          <SPAN CLASS="KW">Case </SPAN>MM_MIM_ERROR
+          <SPAN CLASS="KW">Case </SPAN>MM_MIM_LONGERROR
+          <SPAN CLASS="KW">Case Else
+      End Select
+  End Sub</SPAN></PRE>
+
+<P>
+<UL>
+<LI><B>wMsg</B> tells us what kind of message 
+    we're receiving. Only MM_MIM_DATA and MM_MIM_LONGDATA are really coming from 
+    the outside (keyboard...). The others come from the midi driver. LongData is 
+    used for System Exclusive messages, where my Bulkdump project is all about. 
+    All other messages are short messages or MM_MIM_DATA. Depending on the wMsg, 
+    the dwParam1 and dwParam2 get their meaning. Other wMsg 's have other 
+    dwParam's. Now we continue for the MM_MIM_DATA case only. 
+ 
+ 
+<LI><B>dwParam1</B> is a long value, 4 bytes 
+    or <B>double word</B> (dw - word =     2bytes). Let's take a random 
+    value of &amp;H7F2490 (8332432) for dwParam1. The <B>HighWord</B> 
+    of dwParam1 is &amp;H007F, the <B>LowWord</B> is &amp;H2490. The 
+    <B>Junoir Byte</B> of the word &amp;H2490 is &amp;H90, the 
+    <B>Senior Byte</B> &amp;H24. If you would display dwParam1 
+    byte-wise, then you would get &amp;H90, &amp;H24, &amp;H7F, &amp;H0, in this 
+    order. Going further with this, a byte (8-bit) you can spit up in 2 
+    <B>nibbles</B> (4-bit). One hexadecimal digit holds one nibble. 
+    That's why in midi, values mostly are expressed in hex. 
+    
+
+<LI><B>dwParam1</B> contains the midi 
+    message, dwParam2 the Time Stamp. First dwParam1. Midi messages can be send 
+    in two states: <B>Normal mode</B> and <B>Running 
+    state</B>. Running state is beyond the scope of this short explanation. 
+    In Normal mode the message always starts with a <B>Status 
+    byte</B>. Depending on the Status byte, null, one or more bytes will 
+    follow. In most cases the Status byte holds not only what type of message is 
+    send, but also the channel it sends on. The <B>senior (high) 
+    nibble</B> holds the <B>type</B>, the <B>junior (low) 
+    nibble</B> the <B>channel</B> . For instance in our random 
+    value above, &amp;H90 is the Status byte, describing a Note On message 
+    for channel 0.
+You split the status byte like that:<PRE>
+        MsgType = StatusByte <SPAN CLASS="KW">And</SPAN> &amp;HF0
+        Channel = StatusByte <SPAN CLASS="KW">And</SPAN> &amp;H0F </PRE>
+A few examples of short midi messages (hex) in normal mode :<PRE>
+    Note Off           8n    kk    vv 
+    Note Off           9n    kk    00
+    Note On            9n    kk    vv 
+    Modulation         Bn    01    vv
+    Portamento Time    Bn    05    vv
+    Volume             Bn    07    vv
+    PanPot             Bn    0A    vv
+    ...
+           n  = channel 0-16
+           kk = key/note number 0-127
+           vv = velocity (8 &amp; 9) or new controller (B) value 0-127</PRE>An 
+    exceptional midi message: <B>Active Sensing</B> (&amp;HFE or 254, 
+    only this status byte, other bytes can be disgarded) It is generated by the 
+    midi driver, I think, and tells the sound module, it must expect new data 
+    within an interval of 300ms. If not (&gt;450ms), it can execute the 
+    &quot;All Notes Off&quot;, &quot;All Sounds Off&quot; and &quot;Reset All 
+    Controllers&quot; commands. The &amp;HFE msg is continiously repeated, so 
+    the sound module always reacts as in a 'stand by' state. 
+    
+
+<LI><B>dwParam2</B> the <B>Time 
+    Stamp</B>. This parameter always containes the time since the 
+    API-function <EM>midiInStart</EM> is called.
+</LI>
+</UL> 
+</P> 
+<HR>
+Two URL's where you can download the midi specifications:<BR>
+<A HREF="http://vision1.cs.umr.edu/~johns/links/music/midispec.htm">http://vision1.cs.umr.edu/~johns/links/music/midispec.htm</A>
+<A HREF="http://www.borg.com/~jglatt/tech/midispec.htm">http://www.borg.com/~jglatt/tech/midispec.htm</A>
+</BODY>
+</HTML>

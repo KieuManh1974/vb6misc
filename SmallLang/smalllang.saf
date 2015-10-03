@@ -1,0 +1,7 @@
+ws omit list in 032 009 011 013 | min 0 | |
+number list in 0 to 9 | | |
+symbol list in +!"£$%^&*_+-=:;@~#/.<>(){} | | |
+identifier list in a to z | | |
+set and omit [ list program del omit , min 0 | omit ] | |
+program list or identifier number symbol set | del ws | |
+

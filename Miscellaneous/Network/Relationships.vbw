@@ -1,0 +1,8 @@
+Canvas = 88, 116, 640, 741, Z, 22, 29, 812, 654, C
+Position = 44, 58, 834, 683, 
+Relationship = 66, 87, 856, 712, C
+Definition = 110, 145, 662, 770, C
+PositionList = 154, 203, 944, 828, C
+NewString = 198, 261, 683, 886, C, 176, 232, 728, 857, C
+RelationshipList = 22, 29, 812, 654, C
+FileIO = 132, 174, 684, 799, 

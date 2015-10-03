@@ -1,0 +1,16 @@
+Paper = 132, 174, 880, 786, C, 44, 58, 792, 670, C
+Position = 89, 117, 709, 573, 
+Relationship = 22, 29, 770, 641, C
+Definition = 132, 174, 1168, 677, Z
+PositionList = 110, 145, 858, 757, C
+NewString = 132, 174, 1191, 887, C, 66, 87, 814, 804, C
+RelationshipList = 88, 116, 1064, 833, C
+FileIO = 44, 58, 1080, 561, C
+MDIRelationships = 0, 0, 1036, 503, C, 88, 116, 836, 833, C
+Vector = 66, 87, 1042, 804, C
+LineVector = 198, 261, 793, 856, C
+Diagram = 66, 87, 642, 699, C
+Graphics = 110, 145, 686, 757, C
+IPrimitive = 220, 290, 831, 945, C
+LinePrimitive = 0, 0, 611, 655, C
+CirclePrimitive = 22, 29, 633, 684, C

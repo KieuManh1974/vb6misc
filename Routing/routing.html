@@ -1,0 +1,246 @@
+<html>
+	<head>
+		<script>
+			timings = 0;
+			weekpattern = 0;
+			hourpattern = 1;
+			houroffsets = 2;
+			times = 3;
+			stations = 1;
+			
+			$stations = [];
+			$stations[0] = 'A'
+			$stations[1] = 'B'
+			$stations[2] = 'C'
+			$stations[3] = 'D'
+			$stations[4] = 'E'
+			$stations[5] = 'F'
+			$stations[6] = 'G'
+			$stations[7] = 'H'
+			$stations[8] = 'I'
+			$stations[9] = 'J'
+			
+			$routes = new Array();
+			$routes[0] = [[],0,1,2,3]; 
+			$routes[1] = [[],3,2,1,0]; 		
+			$routes[2] = [[],4,1,5,6]; 
+			$routes[3] = [[],7,6,8,9]; 
+			
+
+			
+			$routes[0][timings][0] = ['DAYS', [6,7,8], [0], '0800','0804','0808','0812']
+			$routes[1][timings][0] = ['DAYS', [8], [20], '0820','0825','0830','0835']				
+			$routes[2][timings][0] = ['DAYS', [8], [15], '0815','0820','0825','0830']	
+			$routes[3][timings][0] = ['DAYS', [8], [35], '0835','0840','0845','0850']	
+
+			
+			$station_routes = [];
+						
+			function BuildStationRoutes() {
+				for ($station_no = 0; $station_no < $stations.length; $station_no++) {
+					$station_routes[$station_no] = [];
+					for ($route_no = 0; $route_no < $routes.length; $route_no++) {
+						for ($route_no_station = 1; $route_no_station < $routes[$route_no].length; $route_no_station++) {
+							if ($routes[$route_no][$route_no_station]==$station_no) {
+								$station_routes[$station_no][$station_routes[$station_no].length] = [$route_no, $route_no_station-1];
+							}
+						}
+					}
+				}
+			}
+
+			function NextStation($station_no, $time_minutes) {
+				var $next_hop = [];
+				var $route_index;
+				var $route_no;
+				var $route_no_station;
+				var $next_station;
+				var $ok;
+				var $timings_index;
+				var $route_base_time;
+				var $depart_base_time;
+				var $arrive_next_base_time;
+				var $hour_index;
+				var $this_hour;
+				var $hour_offset_index;
+				var $start_time;
+				var $hour;
+				
+				for ($route_index = 0; $route_index < $station_routes[$station_no].length; $route_index++) {
+					$route_no = $station_routes[$station_no][$route_index][0];
+					$route_no_station = $station_routes[$station_no][$route_index][1];
+					
+					// Check for end of route
+					if ($route_no_station==($routes[$route_no].length-stations-1)) {
+						$next_station = -1;
+					} else {
+						$next_station = $routes[$route_no][$route_no_station+stations+1];
+						$ok = true;
+						
+						for ($timings_index = 0; $timings_index < $routes[$route_no][timings].length; $timings_index++) {
+							$route_base_time = MinutesOf($routes[$route_no][timings][$timings_index][times]);
+							$depart_base_time  = MinutesOf($routes[$route_no][timings][$timings_index][$route_no_station+times])-$route_base_time;
+							$arrive_next_base_time = MinutesOf($routes[$route_no][timings][$timings_index][$route_no_station+1+times])-$route_base_time;
+
+							for ($hour_index = 0; $hour_index < $routes[$route_no][timings][$timings_index][hourpattern].length; $hour_index++) {
+								$hour = $routes[$route_no][timings][$timings_index][hourpattern][$hour_index];
+								if ($hour!=-1) {
+									$this_hour = ($hour+100+"").substr(1,2);
+									for ($hour_offset_index = 0; $hour_offset_index < $routes[$route_no][timings][$timings_index][houroffsets].length; $hour_offset_index++) {
+										$start_time = MinutesOf($this_hour+($routes[$route_no][timings][$timings_index][houroffsets][$hour_offset_index]+100+"").substr(1,2));
+										if (($start_time+$depart_base_time)>=$time_minutes) {
+											$ok = false;
+											break;
+										}
+									}
+									if (!$ok) break;
+								} else {
+									$start_time = $time_minutes-$depart_base_time;
+									$ok = false;
+									break;
+								}
+							}
+							if (!$ok) break;
+						}
+						if (!$ok) {
+							$next_hop[$next_hop.length] = [$next_station, $start_time+$depart_base_time, $start_time+$arrive_next_base_time, $route_no];
+						}
+					}
+				}
+				return $next_hop;
+			}
+			
+			function MinutesOf($time) {
+				return parseInt($time.substr(0,2),10)*60+parseInt($time.substr(2,2),10);
+			}
+			
+			function TimeOf($minutes) {
+				return (Math.floor($minutes/60)+100+"").substr(1,2)+(Math.floor($minutes%60)+100+"").substr(1,2);
+			}
+			
+			BuildStationRoutes();
+					
+			function Search($station, $destination, $time) {
+				var $route_stack = [];
+				var $route_stack_ptr = 0;
+				var $route_stack_station_ptr = 0;
+				var $index;
+				var $route_stack_parent_ptr;
+				var $destinations = [];
+				var $trips = [];
+
+				$route_stack[$route_stack_ptr++] = [$station, 0, $time, -1, -1];
+				
+				while ($route_stack_station_ptr<$route_stack_ptr) {
+					$next_stations = NextStation($route_stack[$route_stack_station_ptr][0], $route_stack[$route_stack_station_ptr++][2]);
+
+					//ShowStationInfo($next_stations); 
+					
+					for ($index = 0; $index < $next_stations.length; $index++) {
+						$next_stations[$index][$next_stations[$index].length] = $route_stack_station_ptr-1;
+						
+						// Have we reached our destination?
+						if ($next_stations[$index][0]==$destination) {
+							$destinations[$destinations.length] = $next_stations[$index];
+							$index = $next_stations.length;
+						} else {
+							$route_stack_parent_ptr = $route_stack_station_ptr-1;
+							while ($route_stack_parent_ptr>-1) {
+								if ($route_stack[$route_stack_parent_ptr][0] == $next_stations[$index][0] && $route_stack[$route_stack_parent_ptr][3]!=$next_stations[$index][3]) {
+									$route_stack_parent_ptr = -2; // station repeated on route
+								} else {
+									$route_stack_parent_ptr = $route_stack[$route_stack_parent_ptr][4];
+								}
+							}
+							if ($route_stack_parent_ptr!=-2) {
+								$route_stack[$route_stack_ptr++] = $next_stations[$index];
+							}
+						}
+					}
+				}
+//
+//				alert($route_stack.length);
+//				for ($index = 0; $index < $route_stack.length; $index++) {
+//					ShowStationInfo([$route_stack[$index]]);
+//				}
+
+				for ($index = 0; $index < $destinations.length; $index++) {
+					$trips[$index] = [];
+					$trips[$index][0] = $destinations[$index];
+					$route_stack_parent_ptr = $destinations[$index][4];
+					while ($route_stack_parent_ptr!=-1) {
+						$trips[$index][$trips[$index].length] = $route_stack[$route_stack_parent_ptr];
+						$route_stack_parent_ptr = $route_stack[$route_stack_parent_ptr][4];
+					}
+				}
+				
+				return $trips;
+			}
+		
+			function ShowStationInfo($station_info) {
+				var $index;
+				var $si;
+				
+				for ($index = 0; $index < $station_info.length; $index++) {
+					var $si = [$stations[$station_info[$index][0]], TimeOf($station_info[$index][1]), TimeOf($station_info[$index][2]), $station_info[$index][3], $station_info[$index][4]];	
+					alert($si);
+				}
+			}
+			
+			function FindStationIndex($name) {
+				var $index;
+				for ($index=0; $index<$stations.length; $index++) {
+					if ($stations[$index].toLowerCase()==$name.toLowerCase()) {
+						return $index;
+					}
+				}
+				return -1;
+			}
+
+			function ShowTrips() {
+				var $departure_station;
+				var $arrival_station;
+				var $start_time;
+				var $trips;
+				var $index;
+				var $row_text;
+				var $rows = [];
+				
+				$departure_station = FindStationIndex(document.getElementById("departure").value);
+				$arrival_station = FindStationIndex(document.getElementById("arrival").value);
+				$start_time = document.getElementById("time").value;
+				$trips = Search($departure_station, $arrival_station, MinutesOf($start_time));
+				
+				for ($index=0; $index<$trips.length; $index++) {
+					for ($stop_index=$trips[$index].length-1; $stop_index>-1; $stop_index--) {
+						$route_destination_station="";					
+						$departure_time="";
+						if ($stop_index>0) {
+							$route_no = $trips[$index][$stop_index-1][3];
+							$route_destination_station = $stations[$routes[$route_no][$routes[$route_no].length-1]];
+							
+							$departure_time=TimeOf($trips[$index][$stop_index-1][1]);
+						}
+						
+						$row_text = $stations[$trips[$index][$stop_index][0]]+" "+TimeOf($trips[$index][$stop_index][2])+" "+$departure_time+" "+$route_destination_station;
+						$rows[$rows.length] = $row_text;
+					}
+				}
+				
+				document.getElementById("trips").innerHTML = "<div>"+$rows.join("</div><div>")+"</div";
+			}
+			
+			//ShowStationInfo(NextStation(3, MinutesOf("0820")));		
+			//Search(4, 9, MinutesOf("0750"))
+		</script>
+	</head>
+	<body>
+		<div style="height:2em;"><!--Start From --><input id="departure" type="text"></div>
+		<div style="height:2em;"><!--Destination --><input id="arrival" type="text"></div>
+		<div style="height:2em;"><!--Depart Time --><input id="time" type="text"></div>
+		<div style="height:2em;"><input type="button" value="Go" onClick="ShowTrips();"></div>
+		<div id="trips">
+			&nbsp;
+		</div>
+	</body>
+</html>

@@ -1,0 +1,23 @@
+V - Past Station List
+0-9 New Station. New Link. Ctrl to Change Colour
+Black 0, Red 1, Green 2, Yellow 3, Blue 4, Magenta 5, Cyan 6, White 7, Grey 8, Orange 9
+Brown Shift 0, Purple Shift 1, Pink Shift 2
+
+B - Bend Link
+D - Delete Link
+L - Large Link
+E - Edit Station Name
+G - Show Grid
+Add Pad - Zoom In
+Subtract Pad - Zoom Out
+S - Show all Circles
+F - Send Station to Front (ctrl Send to Back)
+T - Send Link to Front (ctr Send to Back)
+C - Adjust Colour RGB
+R - Rotate Label Clockwise (Shift Anti Clockwise)
+P - Change Station Shape 
+Delete - Delete Station
+K - Centre Map
+
+Colour 19 is the text colour
+Colour 18 is the back colour

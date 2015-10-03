@@ -1,0 +1,8 @@
+clsStats = 22, 29, 620, 582, 
+clsStatItem = 44, 58, 642, 611, 
+clsBarGenerator = 66, 87, 664, 640, 
+IGenerator = 88, 116, 686, 669, 
+Paper = 44, 58, 655, 713, , 110, 145, 708, 698, C
+IRender = 132, 174, 730, 727, 
+clsRenderBars = 154, 203, 752, 756, 
+Performance = 0, 0, 0, 0, C

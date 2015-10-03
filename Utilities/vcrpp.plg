@@ -1,0 +1,44 @@
+<html>
+<body>
+<pre>
+<h1>Build Log</h1>
+<h3>
+--------------------Configuration: vcrpp - Win32 Debug--------------------
+</h3>
+<h3>Command Lines</h3>
+Creating temporary file "C:\DOCUME~1\GMP\LOCALS~1\Temp\RSP98.tmp" with contents
+[
+/nologo /MLd /W3 /Gm /GX /ZI /Od /D "WIN32" /D "_DEBUG" /D "_CONSOLE" /D "_MBCS" /Fp"Debug/vcrpp.pch" /YX /Fo"Debug/" /Fd"Debug/" /FD /GZ /c 
+"C:\Projects (Other)\Utilities\vcrpp.c"
+]
+Creating command line "cl.exe @C:\DOCUME~1\GMP\LOCALS~1\Temp\RSP98.tmp" 
+<h3>Output Window</h3>
+Compiling...
+vcrpp.c
+C:\Projects (Other)\Utilities\vcrpp.c(419) : warning C4013: 'strcpy' undefined; assuming extern returning int
+C:\Projects (Other)\Utilities\vcrpp.c(1220) : warning C4013: 'getopt' undefined; assuming extern returning int
+C:\Projects (Other)\Utilities\vcrpp.c(1223) : error C2065: 'optarg' : undeclared identifier
+C:\Projects (Other)\Utilities\vcrpp.c(1223) : warning C4047: 'function' : 'const char *' differs in levels of indirection from 'int '
+C:\Projects (Other)\Utilities\vcrpp.c(1223) : warning C4024: 'strtol' : different types for formal and actual parameter 1
+C:\Projects (Other)\Utilities\vcrpp.c(1235) : warning C4047: 'function' : 'const char *' differs in levels of indirection from 'int '
+C:\Projects (Other)\Utilities\vcrpp.c(1235) : warning C4024: 'strtol' : different types for formal and actual parameter 1
+C:\Projects (Other)\Utilities\vcrpp.c(1240) : warning C4047: 'function' : 'const char *' differs in levels of indirection from 'int '
+C:\Projects (Other)\Utilities\vcrpp.c(1240) : warning C4024: 'strtol' : different types for formal and actual parameter 1
+C:\Projects (Other)\Utilities\vcrpp.c(1245) : warning C4047: 'function' : 'const char *' differs in levels of indirection from 'int '
+C:\Projects (Other)\Utilities\vcrpp.c(1245) : warning C4024: 'strtol' : different types for formal and actual parameter 1
+C:\Projects (Other)\Utilities\vcrpp.c(1250) : warning C4047: 'function' : 'const char *' differs in levels of indirection from 'int '
+C:\Projects (Other)\Utilities\vcrpp.c(1250) : warning C4024: 'strtol' : different types for formal and actual parameter 1
+C:\Projects (Other)\Utilities\vcrpp.c(1255) : warning C4047: 'function' : 'const char *' differs in levels of indirection from 'int '
+C:\Projects (Other)\Utilities\vcrpp.c(1255) : warning C4024: 'atoi' : different types for formal and actual parameter 1
+C:\Projects (Other)\Utilities\vcrpp.c(1261) : warning C4047: 'function' : 'const char *' differs in levels of indirection from 'int '
+C:\Projects (Other)\Utilities\vcrpp.c(1261) : warning C4024: 'atoi' : different types for formal and actual parameter 1
+C:\Projects (Other)\Utilities\vcrpp.c(1272) : error C2065: 'optind' : undeclared identifier
+Error executing cl.exe.
+
+
+
+<h3>Results</h3>
+vcrpp.obj - 2 error(s), 16 warning(s)
+</pre>
+</body>
+</html>

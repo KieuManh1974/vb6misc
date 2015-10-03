@@ -1,0 +1,14 @@
+{
+  short x
+  short y
+  
+  100 x :=
+  0 y :=
+ 
+  {loop
+    y 1 + y :=
+	x 1 - x :=
+	x {if exit}
+  }
+  
+}

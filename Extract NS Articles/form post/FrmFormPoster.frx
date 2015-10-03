@@ -1,0 +1,15 @@
+ÿÆyour_name:Bribobs
+your_email_address:bribobs@hotmail.com
+email_subject_line:Response-O-matic Test
+required_fields:your_email_address
+thank_you_title:Thank You
+return_link_url:http://www.response-o-matic.com
+return_link_name:Response-o-matic Home Page
+background_color:#C0C0C0
+text_color:#000000
+link_color:#0000FF
+visited_link_color:#8000FF
+active_link_color:#0000FF
+AdditionalField1:Value1
+AdditionalField2:Value2
+AdditionalField3:Value3

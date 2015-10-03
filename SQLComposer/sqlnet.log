@@ -1,0 +1,177 @@
+
+
+***********************************************************************
+Fatal NI connect error 12500, connecting to:
+ (DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(HOST=ebs1.ccb.ac.uk)(PORT=1521))(CONNECT_DATA=(SERVICE_NAME=FS1)(CID=(PROGRAM=C:\SQLComposer\SQLComposer.exe)(HOST=PT706-07-)(USER=GMP))))
+
+  VERSION INFORMATION:
+	TNS for 32-bit Windows: Version 8.1.7.0.0 - Production
+	Windows NT TCP/IP NT Protocol Adapter for 32-bit Windows: Version 8.1.7.0.0 - Production
+  Time: 08-NOV-2006 12:03:49
+  Tracing not turned on.
+  Tns error struct:
+    nr err code: 0
+    ns main err code: 12564
+    TNS-12564: TNS:connection refused
+    ns secondary err code: 0
+    nt main err code: 0
+    nt secondary err code: 0
+    nt OS err code: 0
+
+
+***********************************************************************
+Fatal NI connect error 12560, connecting to:
+ (DESCRIPTION=(ADDRESS=(PROTOCOL=BEQ)(PROGRAM=oracle)(ARGV0=oracleORCL)(ARGS='(DESCRIPTION=(LOCAL=YES)(ADDRESS=(PROTOCOL=beq)))'))(CONNECT_DATA=(SID=ORCL)(CID=(PROGRAM=C:\SQLComposer\SQLComposer.exe)(HOST=PT706-07-)(USER=GMP))))
+
+  VERSION INFORMATION:
+	TNS for 32-bit Windows: Version 8.1.7.0.0 - Production
+	Oracle Bequeath NT Protocol Adapter for 32-bit Windows: Version 8.1.7.0.0 - Production
+  Time: 08-NOV-2006 12:03:50
+  Tracing not turned on.
+  Tns error struct:
+    nr err code: 0
+    ns main err code: 12560
+    TNS-12560: TNS:protocol adapter error
+    ns secondary err code: 0
+    nt main err code: 530
+    TNS-00530: Protocol adapter error
+    nt secondary err code: 126
+    nt OS err code: 0
+
+
+***********************************************************************
+Fatal NI connect error 12500, connecting to:
+ (DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(HOST=ebs1.ccb.ac.uk)(PORT=1521))(CONNECT_DATA=(SERVICE_NAME=FS1)(CID=(PROGRAM=C:\SQLComposer\SQLComposer.exe)(HOST=PT706-07-)(USER=GMP))))
+
+  VERSION INFORMATION:
+	TNS for 32-bit Windows: Version 8.1.7.0.0 - Production
+	Windows NT TCP/IP NT Protocol Adapter for 32-bit Windows: Version 8.1.7.0.0 - Production
+  Time: 08-NOV-2006 12:03:57
+  Tracing not turned on.
+  Tns error struct:
+    nr err code: 0
+    ns main err code: 12564
+    TNS-12564: TNS:connection refused
+    ns secondary err code: 0
+    nt main err code: 0
+    nt secondary err code: 0
+    nt OS err code: 0
+
+
+***********************************************************************
+Fatal NI connect error 12560, connecting to:
+ (DESCRIPTION=(ADDRESS=(PROTOCOL=BEQ)(PROGRAM=oracle)(ARGV0=oracleORCL)(ARGS='(DESCRIPTION=(LOCAL=YES)(ADDRESS=(PROTOCOL=beq)))'))(CONNECT_DATA=(SID=ORCL)(CID=(PROGRAM=C:\SQLComposer\SQLComposer.exe)(HOST=PT706-07-)(USER=GMP))))
+
+  VERSION INFORMATION:
+	TNS for 32-bit Windows: Version 8.1.7.0.0 - Production
+	Oracle Bequeath NT Protocol Adapter for 32-bit Windows: Version 8.1.7.0.0 - Production
+  Time: 08-NOV-2006 12:03:57
+  Tracing not turned on.
+  Tns error struct:
+    nr err code: 0
+    ns main err code: 12560
+    TNS-12560: TNS:protocol adapter error
+    ns secondary err code: 0
+    nt main err code: 530
+    TNS-00530: Protocol adapter error
+    nt secondary err code: 126
+    nt OS err code: 0
+
+
+***********************************************************************
+Fatal NI connect error 12500, connecting to:
+ (DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(HOST=ebs1.ccb.ac.uk)(PORT=1521))(CONNECT_DATA=(SERVICE_NAME=FS1)(CID=(PROGRAM=C:\Program Files\Microsoft Visual Studio\VB98\vb6.exe)(HOST=PT706-07-)(USER=GMP))))
+
+  VERSION INFORMATION:
+	TNS for 32-bit Windows: Version 8.1.7.0.0 - Production
+	Windows NT TCP/IP NT Protocol Adapter for 32-bit Windows: Version 8.1.7.0.0 - Production
+  Time: 08-NOV-2006 12:04:49
+  Tracing not turned on.
+  Tns error struct:
+    nr err code: 0
+    ns main err code: 12564
+    TNS-12564: TNS:connection refused
+    ns secondary err code: 0
+    nt main err code: 0
+    nt secondary err code: 0
+    nt OS err code: 0
+
+
+***********************************************************************
+Fatal NI connect error 12560, connecting to:
+ (DESCRIPTION=(ADDRESS=(PROTOCOL=BEQ)(PROGRAM=oracle)(ARGV0=oracleORCL)(ARGS='(DESCRIPTION=(LOCAL=YES)(ADDRESS=(PROTOCOL=beq)))'))(CONNECT_DATA=(SID=ORCL)(CID=(PROGRAM=C:\Program Files\Microsoft Visual Studio\VB98\vb6.exe)(HOST=PT706-07-)(USER=GMP))))
+
+  VERSION INFORMATION:
+	TNS for 32-bit Windows: Version 8.1.7.0.0 - Production
+	Oracle Bequeath NT Protocol Adapter for 32-bit Windows: Version 8.1.7.0.0 - Production
+  Time: 08-NOV-2006 12:04:49
+  Tracing not turned on.
+  Tns error struct:
+    nr err code: 0
+    ns main err code: 12560
+    TNS-12560: TNS:protocol adapter error
+    ns secondary err code: 0
+    nt main err code: 530
+    TNS-00530: Protocol adapter error
+    nt secondary err code: 126
+    nt OS err code: 0
+
+
+***********************************************************************
+Fatal NI connect error 12500, connecting to:
+ (DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(HOST=ebs1.ccb.ac.uk)(PORT=1521))(CONNECT_DATA=(SERVICE_NAME=FS1)(CID=(PROGRAM=C:\Program Files\Microsoft Visual Studio\VB98\vb6.exe)(HOST=PT706-07-)(USER=GMP))))
+
+  VERSION INFORMATION:
+	TNS for 32-bit Windows: Version 8.1.7.0.0 - Production
+	Windows NT TCP/IP NT Protocol Adapter for 32-bit Windows: Version 8.1.7.0.0 - Production
+  Time: 08-NOV-2006 12:05:12
+  Tracing not turned on.
+  Tns error struct:
+    nr err code: 0
+    ns main err code: 12564
+    TNS-12564: TNS:connection refused
+    ns secondary err code: 0
+    nt main err code: 0
+    nt secondary err code: 0
+    nt OS err code: 0
+
+
+***********************************************************************
+Fatal NI connect error 12560, connecting to:
+ (DESCRIPTION=(ADDRESS=(PROTOCOL=BEQ)(PROGRAM=oracle)(ARGV0=oracleORCL)(ARGS='(DESCRIPTION=(LOCAL=YES)(ADDRESS=(PROTOCOL=beq)))'))(CONNECT_DATA=(SID=ORCL)(CID=(PROGRAM=C:\Program Files\Microsoft Visual Studio\VB98\vb6.exe)(HOST=PT706-07-)(USER=GMP))))
+
+  VERSION INFORMATION:
+	TNS for 32-bit Windows: Version 8.1.7.0.0 - Production
+	Oracle Bequeath NT Protocol Adapter for 32-bit Windows: Version 8.1.7.0.0 - Production
+  Time: 08-NOV-2006 12:05:12
+  Tracing not turned on.
+  Tns error struct:
+    nr err code: 0
+    ns main err code: 12560
+    TNS-12560: TNS:protocol adapter error
+    ns secondary err code: 0
+    nt main err code: 530
+    TNS-00530: Protocol adapter error
+    nt secondary err code: 126
+    nt OS err code: 0
+
+
+***********************************************************************
+Fatal NI connect error 12560, connecting to:
+ (DESCRIPTION=(ADDRESS=(PROTOCOL=BEQ)(PROGRAM=oracle)(ARGV0=oracleORCL)(ARGS='(DESCRIPTION=(LOCAL=YES)(ADDRESS=(PROTOCOL=beq)))'))(CONNECT_DATA=(SID=ORCL)(CID=(PROGRAM=C:\SQLComposer\SQLComposer.exe)(HOST=PT706-07-)(USER=GMP))))
+
+  VERSION INFORMATION:
+	TNS for 32-bit Windows: Version 8.1.7.0.0 - Production
+	Oracle Bequeath NT Protocol Adapter for 32-bit Windows: Version 8.1.7.0.0 - Production
+	Windows NT TCP/IP NT Protocol Adapter for 32-bit Windows: Version 8.1.7.0.0 - Production
+  Time: 07-MAR-2007 16:45:51
+  Tracing not turned on.
+  Tns error struct:
+    nr err code: 0
+    ns main err code: 12560
+    TNS-12560: TNS:protocol adapter error
+    ns secondary err code: 0
+    nt main err code: 530
+    TNS-00530: Protocol adapter error
+    nt secondary err code: 126
+    nt OS err code: 0

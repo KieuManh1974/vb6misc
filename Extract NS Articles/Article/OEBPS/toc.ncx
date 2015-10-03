@@ -1,0 +1,439 @@
+<ncx xmlns="http://www.daisy.org/z3986/2005/ncx/" version="2005-1">
+<head>
+    <meta name="dtb:uid" content="jedisaber.com082120071415"/>
+    <meta name="dtb:depth" content="1"/>
+    <meta name="dtb:totalPageCount" content="0"/>
+    <meta name="dtb:maxPageNumber" content="0"/>
+</head>
+<docTitle>
+    <text>New Scientist</text>
+</docTitle>
+<navMap>
+<navPoint id="navpoint-1" playOrder="1">
+<navLabel>
+<text>Table of Contents</text>
+</navLabel>
+<content src="toc.html"/>
+</navPoint>
+<navPoint id="navpoint-2" playOrder="2">
+<navLabel>
+<text>Editorial: Privacy in the age of Facebook</text>
+</navLabel>
+<content src="article1.html"/>
+</navPoint>
+<navPoint id="navpoint-3" playOrder="3">
+<navLabel>
+<text>Editorial: The endless possibilities of life in the cosmos</text>
+</navLabel>
+<content src="article2.html"/>
+</navPoint>
+<navPoint id="navpoint-4" playOrder="4">
+<navLabel>
+<text>News > Upfront: Childhood leukaemia linked to mosquito bites</text>
+</navLabel>
+<content src="article3.html"/>
+</navPoint>
+<navPoint id="navpoint-5" playOrder="5">
+<navLabel>
+<text>News > Upfront: Inaccurate IQ tests could be a matter of life and death</text>
+</navLabel>
+<content src="article4.html"/>
+</navPoint>
+<navPoint id="navpoint-6" playOrder="6">
+<navLabel>
+<text>News > Upfront: Japan closes 'kamikaze' coastal nuclear plant</text>
+</navLabel>
+<content src="article5.html"/>
+</navPoint>
+<navPoint id="navpoint-7" playOrder="7">
+<navLabel>
+<text>News > Upfront: NASA floats Titan boat concept</text>
+</navLabel>
+<content src="article6.html"/>
+</navPoint>
+<navPoint id="navpoint-8" playOrder="8">
+<navLabel>
+<text>News > 60 Seconds: 60 Seconds</text>
+</navLabel>
+<content src="article7.html"/>
+</navPoint>
+<navPoint id="navpoint-9" playOrder="9">
+<navLabel>
+<text>News > Upfront: Byzantine perspective on climate justice</text>
+</navLabel>
+<content src="article8.html"/>
+</navPoint>
+<navPoint id="navpoint-10" playOrder="10">
+<navLabel>
+<text>News > Upfront: Gas drilling contaminates drinking water</text>
+</navLabel>
+<content src="article9.html"/>
+</navPoint>
+<navPoint id="navpoint-11" playOrder="11">
+<navLabel>
+<text>News > Upfront: Renewables may supply 80 per cent of our energy by 2050</text>
+</navLabel>
+<content src="article10.html"/>
+</navPoint>
+<navPoint id="navpoint-12" playOrder="12">
+<navLabel>
+<text>News > This Week: Sex on the brain: Orgasms unlock altered consciousness</text>
+</navLabel>
+<content src="article11.html"/>
+</navPoint>
+<navPoint id="navpoint-13" playOrder="13">
+<navLabel>
+<text>News > This Week: Neurons with double DNA implicated in Alzheimer's</text>
+</navLabel>
+<content src="article12.html"/>
+</navPoint>
+<navPoint id="navpoint-14" playOrder="14">
+<navLabel>
+<text>News > This Week: Alien life may huddle under hydrogen blankets</text>
+</navLabel>
+<content src="article13.html"/>
+</navPoint>
+<navPoint id="navpoint-15" playOrder="15">
+<navLabel>
+<text>News > This Week: New doubts over shaken-baby evidence</text>
+</navLabel>
+<content src="article14.html"/>
+</navPoint>
+<navPoint id="navpoint-16" playOrder="16">
+<navLabel>
+<text>News > This Week: DNA chip test will track down illegal fish</text>
+</navLabel>
+<content src="article15.html"/>
+</navPoint>
+<navPoint id="navpoint-17" playOrder="17">
+<navLabel>
+<text>News > This Week: Fermenting fruit did not lead to alcohol gene</text>
+</navLabel>
+<content src="article16.html"/>
+</navPoint>
+<navPoint id="navpoint-18" playOrder="18">
+<navLabel>
+<text>News > This Week: Beware Higgs impostors at the LHC</text>
+</navLabel>
+<content src="article17.html"/>
+</navPoint>
+<navPoint id="navpoint-19" playOrder="19">
+<navLabel>
+<text>News > This Week: Graphene may reveal the grain of space-time</text>
+</navLabel>
+<content src="article18.html"/>
+</navPoint>
+<navPoint id="navpoint-20" playOrder="20">
+<navLabel>
+<text>News > This Week: The only fish that cries like a baby</text>
+</navLabel>
+<content src="article19.html"/>
+</navPoint>
+<navPoint id="navpoint-21" playOrder="21">
+<navLabel>
+<text>News > In Brief: Beleaguered mission measures swirling space-time at last</text>
+</navLabel>
+<content src="article20.html"/>
+</navPoint>
+<navPoint id="navpoint-22" playOrder="22">
+<navLabel>
+<text>News > In Brief: Crocodiles swam the Atlantic to reach America</text>
+</navLabel>
+<content src="article21.html"/>
+</navPoint>
+<navPoint id="navpoint-23" playOrder="23">
+<navLabel>
+<text>News > In Brief: Easily distracted people may have too much brain</text>
+</navLabel>
+<content src="article22.html"/>
+</navPoint>
+<navPoint id="navpoint-24" playOrder="24">
+<navLabel>
+<text>News > In Brief: Good kids and happy care home residents – the devil is in the design [will be SSS blog]</text>
+</navLabel>
+<content src="article23.html"/>
+</navPoint>
+<navPoint id="navpoint-25" playOrder="25">
+<navLabel>
+<text>News > In Brief: Fear dulls our awareness of the nuances of sound</text>
+</navLabel>
+<content src="article24.html"/>
+</navPoint>
+<navPoint id="navpoint-26" playOrder="26">
+<navLabel>
+<text>News > In Brief: First evidence that gorillas pass on traditions</text>
+</navLabel>
+<content src="article25.html"/>
+</navPoint>
+<navPoint id="navpoint-27" playOrder="27">
+<navLabel>
+<text>News > In Brief: Saturn moon's atmosphere forged by comet impacts</text>
+</navLabel>
+<content src="article26.html"/>
+</navPoint>
+<navPoint id="navpoint-28" playOrder="28">
+<navLabel>
+<text>News > In Brief: Teen survey reveals gene for happiness</text>
+</navLabel>
+<content src="article27.html"/>
+</navPoint>
+<navPoint id="navpoint-29" playOrder="29">
+<navLabel>
+<text>Technology > News: Sailbots head for the high seas</text>
+</navLabel>
+<content src="article28.html"/>
+</navPoint>
+<navPoint id="navpoint-30" playOrder="30">
+<navLabel>
+<text>Technology > News: Electric vehicles herald rise of the in-car app</text>
+</navLabel>
+<content src="article29.html"/>
+</navPoint>
+<navPoint id="navpoint-31" playOrder="31">
+<navLabel>
+<text>Technology > News: One Per Cent</text>
+</navLabel>
+<content src="article30.html"/>
+</navPoint>
+<navPoint id="navpoint-32" playOrder="32">
+<navLabel>
+<text>Technology > News: Static charge provides clue to age of fingerprints</text>
+</navLabel>
+<content src="article31.html"/>
+</navPoint>
+<navPoint id="navpoint-33" playOrder="33">
+<navLabel>
+<text>Technology > News: Taking control of your data into your own hands</text>
+</navLabel>
+<content src="article32.html"/>
+</navPoint>
+<navPoint id="navpoint-34" playOrder="34">
+<navLabel>
+<text>Opinion > Comment and Analysis: Obama is right to withhold photos of bin Laden's corpse</text>
+</navLabel>
+<content src="article33.html"/>
+</navPoint>
+<navPoint id="navpoint-35" playOrder="35">
+<navLabel>
+<text>Opinion > Interview: CERN press chief: We'll never plug blockbuster leaks</text>
+</navLabel>
+<content src="article34.html"/>
+</navPoint>
+<navPoint id="navpoint-36" playOrder="36">
+<navLabel>
+<text>Letters: Don't call us</text>
+</navLabel>
+<content src="article35.html"/>
+</navPoint>
+<navPoint id="navpoint-37" playOrder="37">
+<navLabel>
+<text>Letters: Take a torch</text>
+</navLabel>
+<content src="article36.html"/>
+</navPoint>
+<navPoint id="navpoint-38" playOrder="38">
+<navLabel>
+<text>Letters: Tortoises and hares</text>
+</navLabel>
+<content src="article37.html"/>
+</navPoint>
+<navPoint id="navpoint-39" playOrder="39">
+<navLabel>
+<text>Letters: Wedding rows</text>
+</navLabel>
+<content src="article38.html"/>
+</navPoint>
+<navPoint id="navpoint-40" playOrder="40">
+<navLabel>
+<text>Opinion > Enigma: Enigma Number 1646</text>
+</navLabel>
+<content src="article39.html"/>
+</navPoint>
+<navPoint id="navpoint-41" playOrder="41">
+<navLabel>
+<text>Letters: Battle of wills</text>
+</navLabel>
+<content src="article40.html"/>
+</navPoint>
+<navPoint id="navpoint-42" playOrder="42">
+<navLabel>
+<text>Letters: Blood money</text>
+</navLabel>
+<content src="article41.html"/>
+</navPoint>
+<navPoint id="navpoint-43" playOrder="43">
+<navLabel>
+<text>Letters: Chewing it over</text>
+</navLabel>
+<content src="article42.html"/>
+</navPoint>
+<navPoint id="navpoint-44" playOrder="44">
+<navLabel>
+<text>Letters: Keep it low-rise</text>
+</navLabel>
+<content src="article43.html"/>
+</navPoint>
+<navPoint id="navpoint-45" playOrder="45">
+<navLabel>
+<text>Letters: On the button</text>
+</navLabel>
+<content src="article44.html"/>
+</navPoint>
+<navPoint id="navpoint-46" playOrder="46">
+<navLabel>
+<text>Letters: Swear it's true</text>
+</navLabel>
+<content src="article45.html"/>
+</navPoint>
+<navPoint id="navpoint-47" playOrder="47">
+<navLabel>
+<text>Letters: What a way to go</text>
+</navLabel>
+<content src="article46.html"/>
+</navPoint>
+<navPoint id="navpoint-48" playOrder="48">
+<navLabel>
+<text>Letters: Your plate or mine?</text>
+</navLabel>
+<content src="article47.html"/>
+</navPoint>
+<navPoint id="navpoint-49" playOrder="49">
+<navLabel>
+<text>Opinion > The Big Idea: Out of control: How to live in an unfathomable world</text>
+</navLabel>
+<content src="article48.html"/>
+</navPoint>
+<navPoint id="navpoint-50" playOrder="50">
+<navLabel>
+<text>Features > Feature: 2020 vision: Be nice to the telepresence robot</text>
+</navLabel>
+<content src="article49.html"/>
+</navPoint>
+<navPoint id="navpoint-51" playOrder="51">
+<navLabel>
+<text>Features > Feature: 2020 vision: Stroll through data in the augmented city</text>
+</navLabel>
+<content src="article50.html"/>
+</navPoint>
+<navPoint id="navpoint-52" playOrder="52">
+<navLabel>
+<text>Features > Feature: 2020 vision: Don't invent, evolve</text>
+</navLabel>
+<content src="article51.html"/>
+</navPoint>
+<navPoint id="navpoint-53" playOrder="53">
+<navLabel>
+<text>Features > Feature: 2020 vision: Eat a printed dinner in your printed home</text>
+</navLabel>
+<content src="article52.html"/>
+</navPoint>
+<navPoint id="navpoint-54" playOrder="54">
+<navLabel>
+<text>Features > Feature: 2020 vision: Jacking into your brain</text>
+</navLabel>
+<content src="article53.html"/>
+</navPoint>
+<navPoint id="navpoint-55" playOrder="55">
+<navLabel>
+<text>Features > Feature: 2020 vision: Digital wallets will empty faster</text>
+</navLabel>
+<content src="article54.html"/>
+</navPoint>
+<navPoint id="navpoint-56" playOrder="56">
+<navLabel>
+<text>Features > Feature: 2020 vision: The crystal ball internet</text>
+</navLabel>
+<content src="article55.html"/>
+</navPoint>
+<navPoint id="navpoint-57" playOrder="57">
+<navLabel>
+<text>Features > Cover Story: The grand delusion: What you see is not what you get</text>
+</navLabel>
+<content src="article56.html"/>
+</navPoint>
+<navPoint id="navpoint-58" playOrder="58">
+<navLabel>
+<text>Features > Cover Story: The grand delusion: Blind to bias</text>
+</navLabel>
+<content src="article57.html"/>
+</navPoint>
+<navPoint id="navpoint-59" playOrder="59">
+<navLabel>
+<text>Features > Cover Story: The grand delusion: Head full of half-truths</text>
+</navLabel>
+<content src="article58.html"/>
+</navPoint>
+<navPoint id="navpoint-60" playOrder="60">
+<navLabel>
+<text>Features > Cover Story: The grand delusion: Egotist, moi?</text>
+</navLabel>
+<content src="article59.html"/>
+</navPoint>
+<navPoint id="navpoint-61" playOrder="61">
+<navLabel>
+<text>Features > Cover Story: The grand delusion: Who's in control?</text>
+</navLabel>
+<content src="article60.html"/>
+</navPoint>
+<navPoint id="navpoint-62" playOrder="62">
+<navLabel>
+<text>Features > Feature: Gut reactions: the microbes that make you</text>
+</navLabel>
+<content src="article61.html"/>
+</navPoint>
+<navPoint id="navpoint-63" playOrder="63">
+<navLabel>
+<text>Features > Feature: No place like home: Our lonesome solar system</text>
+</navLabel>
+<content src="article62.html"/>
+</navPoint>
+<navPoint id="navpoint-64" playOrder="64">
+<navLabel>
+<text>Opinion > CultureLab: Research notes from the wild side</text>
+</navLabel>
+<content src="article63.html"/>
+</navPoint>
+<navPoint id="navpoint-65" playOrder="65">
+<navLabel>
+<text>Opinion > CultureLab: Animatronic dinosaurs set in their world</text>
+</navLabel>
+<content src="article64.html"/>
+</navPoint>
+<navPoint id="navpoint-66" playOrder="66">
+<navLabel>
+<text>Opinion > CultureLab: Has our neuro-obsession gone too far?</text>
+</navLabel>
+<content src="article65.html"/>
+</navPoint>
+<navPoint id="navpoint-67" playOrder="67">
+<navLabel>
+<text>Opinion > CultureLab: Weird and wild underwater creatures</text>
+</navLabel>
+<content src="article66.html"/>
+</navPoint>
+<navPoint id="navpoint-68" playOrder="68">
+<navLabel>
+<text>Opinion > CultureLab: Animals – a design triumph</text>
+</navLabel>
+<content src="article67.html"/>
+</navPoint>
+<navPoint id="navpoint-69" playOrder="69">
+<navLabel>
+<text>Opinion > CultureLab: Can science fiction still predict the future?</text>
+</navLabel>
+<content src="article68.html"/>
+</navPoint>
+<navPoint id="navpoint-70" playOrder="70">
+<navLabel>
+<text>Feedback: Feedback: Nano-sized signal sucker</text>
+</navLabel>
+<content src="article69.html"/>
+</navPoint>
+<navPoint id="navpoint-71" playOrder="71">
+<navLabel>
+<text>The Last Word > Last Word Answer: Don't call me ginger</text>
+</navLabel>
+<content src="article70.html"/>
+</navPoint>
+  </navMap>
+</ncx>

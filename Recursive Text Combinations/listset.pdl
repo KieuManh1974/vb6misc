@@ -1,0 +1,10 @@
+level0 := LIST level1, ',';
+level1 := REPEAT level2;
+level2 := OR level3, identifier, text;
+level3 := AND '{', level0, '}';
+text := REPEAT OR (&['|'], '|'), (&['|'], '~'), (&['|'], ','), (&['|'], '{'), (&['|'], '}'), (&['|'], '$'), (&['|'], ':'), IN 0 TO 255, NOT '|', NOT '~', NOT '$', NOT '{', NOT '}', NOT ':', NOT ',';
+identifier := AND ['$'], index_name;
+index_name := {REPEAT IN CASE 'a' TO 'z', '0' TO '9'};
+list_name := AND identifier, ':';
+
+

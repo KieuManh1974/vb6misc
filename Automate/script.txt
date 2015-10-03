@@ -1,0 +1,9 @@
+notepad.open 'notepad'
+
+notepad.wait 3
+
+'Enter some text here'
+
+notepad.wait 5
+
+ALT,'FX'

@@ -1,0 +1,9 @@
+Definition = 110, 145, 1098, 862, 
+Program = 88, 116, 1076, 833, Z
+Analyse = 66, 87, 1054, 804, C
+clsNode = 110, 145, 957, 509, 
+clsKey = 88, 116, 825, 737, C
+Compose = 176, 232, 913, 853, 
+Block = 198, 261, 725, 882, C
+GenerateIntermediateCode = 22, 29, 549, 650, 
+GenerateAssemblyCode = 66, 87, 626, 622, 

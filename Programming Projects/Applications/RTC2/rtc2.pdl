@@ -1,0 +1,13 @@
+set_var := {AND ['$'], (IN CASE 'a' TO 'z'), REPEAT IN CASE 'a' TO 'z', '0' TO '9' MIN 0, [OPTIONAL ';']};
+parallel_var := {AND ['$'], set_var};
+digits := {REPEAT IN '0' TO '9'};
+range := AND ['$'], digits, OPTIONAL (AND [':'], digits), [OPTIONAL ';'];
+reference := AND parallel_var, [':'], set;
+escape := {AND ['|'], IN '$:,;{}@~#|^%'};
+other := {IN 0 TO 255, NOT '$:,;{}@~#'};
+assignment := AND set_var, [':'], set;
+set := AND OPTIONAL (OR '@~', '~@', '@', '~'), ['{'], (LIST element, [','] MIN 0), ['}'];
+element := AND OPTIONAL ['#'], REPEAT (OR assignment, set_var, reference, parallel_var, range, set, escape, other, PASS);
+
+indexed := AND set_var, '{', set, '}';
+

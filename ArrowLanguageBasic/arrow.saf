@@ -1,0 +1,27 @@
+ws omit list in 032 009 | min 0 | |
+new_line omit and 013 010 | |
+number and opt - | list in 0 to 9 | | | |
+identifier list in a to z | | |
+range and number ws omit .. ws number | |
+
+range_set list range del omit and ws || ws | | |
+symbol_set and omit / list skip | until  non omit / | omit / | |
+identifier_set list identifier del omit and ws || ws | | |
+member or symbol_set identifier_set range_set | |
+named_member and opt and identifier omit : | | member | |
+index_set and omit [ list named_member del omit and ws , ws | | omit ] | |
+structure_def list or index_set identifier | del ws | |
+declaration and or sen rec str var | ws identifier ws structure_def | |
+for_loop and omit sen for ws structure_def ws omit : ws identifier ws omit { omit } | |
+expression_old or number identifier | |
+index and omit [ list expression del omit and ws , ws | | omit ] | |
+var_index and identifier index | |
+
+bracket and omit ( expression omit ) | |
+operator or : + - * / % | |
+expression list or identifier number bracket | del operator | |
+simple_range and omit [ ws range ws omit ] | |
+class_declaration and omit class ws identifier ws simple_range | |
+object and omit new ws identifier ws or identifier simple_range | | |
+statement or class_declaration object expression | |
+statements list statement del new_line min 0 | |

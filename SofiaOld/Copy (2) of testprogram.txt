@@ -1,0 +1,10 @@
+{
+long{};
+vector{public long x{}; public long y{}; public long z{}; extrapolate{interpolate{}}};
+private array(1,10) vector normal{};
+
+normal(2).new(1,2,3);
+
+normalx;
+
+}

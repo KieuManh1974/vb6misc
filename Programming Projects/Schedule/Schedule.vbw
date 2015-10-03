@@ -1,0 +1,8 @@
+frmEnterText = 220, 290, 1085, 1003, C, 44, 58, 909, 771, C
+clsTask = 198, 261, 990, 974, C
+clsHierarchy = 264, 348, 1129, 1061, C
+clsDisplayList = 264, 348, 1336, 1061, C
+clsList = 154, 203, 1226, 916, C
+clsTree = 110, 145, 975, 858, C
+clsRepresentation = 242, 319, 1107, 1032, C
+frmSchedule = 154, 203, 1019, 916, Z, 22, 29, 887, 742, C

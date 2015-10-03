@@ -1,0 +1,149 @@
+﻿
+body 
+{ margin-top: 0;
+  margin-bottom: 0;
+  margin-left: 0;
+  margin-right: 0;
+  padding-left: 0;
+  padding-right: 0;
+  font-family:Georgia, Tahoma;
+  color:#333333;
+  background-color:#91a67c;
+}
+
+#header {
+  margin-top: 0px;
+  padding-bottom:3px;
+  /*height: 100px;*/
+  color:#3a5a2a;
+  font-size:22px;
+  font-style:italic;
+  font-weight:bold;
+  text-align:center;
+  vertical-align:middle;
+  line-height:50px;
+  /*background-repeat:repeat-x;
+  background-image:url(images/header.jpeg);*/
+  background-color:White;
+  border-bottom-style:solid;
+  border-bottom-color:Black;
+  border-bottom-width:100%;
+}
+
+#left {
+  position: absolute;
+  left: 15px;
+  width: 200px;
+}
+
+
+#middleSection 
+{
+  color:#333333;
+  top: 0;
+  margin-left: 230px;
+  margin-right: 230px;
+  padding:10px 10px 10px 10px;
+  border-left:solid 1px black;
+  text-align:justify;
+  background-color:White;
+  width: 60%;
+}
+
+#right {
+  position: absolute;
+  right: 15px;
+  top: 160px;
+  width: 200px;
+}
+
+
+#menu {
+width: 200px;
+float:left;
+} 
+
+/*In this portion we style the actual list, containing the list items. This is the place were we decide on our font-type, size, margin, padding and of course the list style. We are using list-style-type:none; so our list items wont display anything in front of them. #menu1 ul*/
+#menu ul
+{
+	list-style-type:none;
+	margin:0;
+	padding:0;
+} 
+
+/*In this portion we apply a CSS property to our List elements that makes our menu look the same on Internet Explorer and other browsers.*/
+#menu li
+{
+display: inline;
+/* for IE5 and IE6 */
+} 
+
+#menu a
+{
+color: #fff;
+text-decoration: none;
+font-size: 14px;
+display: block;
+padding: 3px;
+width: 160px;
+background-color:Gray;
+border-bottom: 1px solid #eee;
+} 
+
+#menu a:link, #menu a:visited
+{
+color: #EEE;
+text-decoration: none;
+} 
+
+#menu a:hover
+{
+text-decoration:underline;
+color: #fff;
+} 
+#menu li a#active
+{
+border-bottom: 3px solid #DAD6B7;
+background:Olive;
+} 
+
+#contentText p
+{
+	color:black;
+	padding-top:10px;
+}
+
+#contentText ul li
+{
+	
+	list-style-type:none;
+	color:black;
+	padding-top:4px;
+	margin-left:10px;
+}
+#attractions a
+{
+	color:Navy;
+}
+.centre
+{
+	text-align:center;	
+	margin-left:0;
+	margin-right:0;
+	font-style:italic;
+	font-weight:bolder;
+	margin:5px;
+}
+
+
+/*In this portion we apply a CSS property to our List elements that makes our menu look the same on Internet Explorer and other browsers.*/
+#tariff li
+{
+	margin:15px;
+} 
+
+.facilities
+{
+	list-style-image:url(images/star.gif);
+	padding-left:40px;
+}

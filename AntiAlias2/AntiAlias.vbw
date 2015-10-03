@@ -1,0 +1,10 @@
+clsFineDiagram = 44, 58, 618, 679, C, 22, 29, 596, 650, C
+clsRational = 0, 0, 574, 621, C
+clsCircle = 176, 232, 956, 853, C
+clsVector = 44, 58, 618, 679, C
+clsTriangle = 66, 87, 640, 708, C
+IShape = 198, 261, 978, 882, C
+clsCompositeAnd = 176, 232, 956, 853, C
+Startup = 220, 290, 794, 911, Z
+clsDiagram = 0, 0, 574, 621, C, 198, 261, 978, 882, C
+Performance = 0, 0, 780, 621, C

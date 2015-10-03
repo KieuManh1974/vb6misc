@@ -1,0 +1,6 @@
+frmConsole = 0, 0, 0, 0, C, 22, 29, 889, 485, C
+modNano = 44, 58, 911, 514, 
+modMemory = 66, 87, 711, 543, C
+modController = 132, 174, 777, 630, C
+modCompile = 0, 0, 867, 456, Z
+modPerformance = 66, 87, 806, 535, C

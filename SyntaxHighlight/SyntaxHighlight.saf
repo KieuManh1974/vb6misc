@@ -1,0 +1,3 @@
+ws list 032 min 0 | |
+function_def and ws function ws name ws { ws } ws | |
+

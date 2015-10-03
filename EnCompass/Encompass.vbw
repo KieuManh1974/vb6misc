@@ -1,0 +1,12 @@
+frmCanvas = 44, 58, 911, 514, C, 22, 29, 889, 485, C
+IShape = 0, 0, 867, 456, C
+clsViewPort = 0, 0, 629, 456, 
+clsRatCoordinatePair = 22, 29, 651, 485, C
+clsRational = 0, 0, 629, 456, C
+GlobalDefs = 110, 145, 761, 500, C
+clsCoordinatePair = 88, 116, 955, 572, C
+clsGrid = 44, 58, 933, 413, Z
+clsOrientation = 0, 0, 0, 0, C
+clsGraphicControl = 154, 203, 1021, 659, 
+clsShapeList = 66, 87, 955, 442, C
+clsPoint = 132, 174, 999, 630, C

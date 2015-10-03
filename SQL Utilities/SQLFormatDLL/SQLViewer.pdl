@@ -1,0 +1,134 @@
+ws := [REPEAT IN 0 TO 32 MIN 0];
+ws1 := [REPEAT IN 0 TO 32];
+identifier := {REPEAT IN CASE 'A' TO 'Z', '0' TO '9', '_', '@', '$' MIN 1};
+identifier2 := {AND (IN 33 TO 255, NOT ',![]`"'), REPEAT IN 32 TO 255, NOT ',![]`"' MIN 0};
+
+date := AND '#', identifier, : ' /', identifier, : ' /', identifier, '#';
+string1 := AND 34, REPEAT (OR 34+ 34, (IN 32 TO 255, NOT 34)) MIN 0, 34;
+string2 := AND 39, REPEAT (OR 39+ 39, (IN 32 TO 255, NOT 39)) MIN 0, 39;
+string := OR string1, string2;
+
+function := AND {AND identifier, ? '$'}, ws, ['('], ws, (LIST level0, [AND ws, ',', ws] MIN 0), ws, [')'];
+number := AND (REPEAT IN '0' TO '9', '.'), ! IN 'A' - 'Z';
+brackets := AND ['('], ws, level0, ws, [')'];
+unary := AND (OR (IN '+-'), (AND ^'NOT', ! IN ^ 'A' - 'Z')), ws, level0;
+
+is := AND [^'IS'], ws, ? [^'NOT'], ws, [^'NULL'];
+in_exp := AND ? [^'NOT'], ws, [^'IN'], ws, (OR (AND ['('], ws, (LIST (OR string, number), [AND ws, ',', ws]), ws, [')']), sub_query);
+like := AND ? [^'NOT'], ws, [^'LIKE'], ws, string;
+between := AND ? [^'NOT'], ws, [^'BETWEEN'], ws, level4, ws, [^'AND'], ws, level4;
+
+level0 := LIST level1, (AND ws, ^'OR', ! (IN ^ 'A' - 'Z'), ws);
+level1 := LIST level2, (AND ws, ^'AND', ! (IN ^ 'A' - 'Z'), ws);
+level2 := LIST level3, (AND ws, (IN '^|'), ws);
+level3 := LIST level4, (AND ws, (OR '<>', '<=', '>=', '<', '>', '=', '!='), ws);
+level4 := LIST level5, (AND ws, (OR (IN '+-&'), '||'), ws);
+level5 := LIST level6, (AND ws, (IN '*/%\'), ws);
+level6 := AND level7, ws, ? (OR is, in_exp, like, between);
+level7 := OR date, string, unary, number, function, field_qualified, simple_sub_query, brackets;
+
+field_name := OR '*', {OR (AND ['['], identifier2, [']']), (AND ['`'], identifier2, ['`']), (AND ['"'], identifier2, ['"']), (AND [! AND ^'FROM', ws1], identifier)};
+table_name := {OR (AND ['['], identifier2, [']']), (AND ['`'], identifier2, ['`']), (AND ['"'], identifier2, ['"']), (AND [! AND (OR ^'FROM', ^'WHERE', ^'GROUP BY', ^'ORDER BY', ^'HAVING'), ws1], identifier)};
+
+field_qualified_any := AND REPEAT (AND table_name, IN '!.') MIN 0, field_name;
+
+field_qualified := AND field_qualified_any, ? (AND ws, '(+)');
+
+analytic_function := AND function, ws, ^'OVER', ws, ['('], ws, (OPTIONAL AND ^'PARTITION', ws, ^'BY', ws, level0, ws), OPTIONAL order_by_clause, [')'];
+
+field_alias := AND (OR analytic_function, level0), ws, ? (AND ? (AND ^'AS', ws1), ! ^'INTO', ! ^'FROM', ! ^'WHERE', ! ^'ORDER BY', ! ^'GROUP BY', ! ^'HAVING', field_name);
+table_alias := AND table_name, ws, ? (AND ? (AND ^'AS', ws1), ! ^'WHERE', ! ^'ORDER BY', ! ^'GROUP BY', ! ^'HAVING', ! ^'INNER ', ! ^'OUTER ', ! ^'LEFT ', ! ^'RIGHT ', ! ^'JOIN', ! ^'ON', ! ^'UNION', table_name);
+field_assignment := AND field_qualified, ws, '=', ws, level0;
+
+field_list := AND (LIST field_name, [AND ws, ',', ws]), [? AND ws, ',', ws];
+field_list2 := AND (LIST field_alias, [AND ws, ',', ws]), [? AND ws, ',', ws];
+value_list := AND ^'VALUES', ws, ['('], ws, (LIST level0, [AND ws, ',', ws]), ws, [')'], ws;
+field_list_qualified := LIST (AND level0, ws, ? (OR ^'DESC', ^'ASC'), ws, ? (AND ^'NULLS', ws, (OR ^'FIRST', ^'LAST'))), [AND ws, ',', ws];
+table_list := AND (LIST join_expression, [AND ws, ',', ws]), [? AND ws, ',', ws];
+field_value_list := LIST field_assignment, [AND ws, ',', ws];
+
+bracket_join := AND ['('], ws, join_expression, ws, [')'];
+sub_query1 := AND ['('], union_statement, [')'];
+sub_query2 := AND ['['], union_statement, [']'];
+sub_query := AND (OR sub_query1, sub_query2), ? ['.'], ws, ? (AND ? ^'AS', ws, ! ^'WHERE', ! (AND ^'ORDER', ws1, ^'BY'), ! (AND ^'GROUP', ws1, ^'BY'), ! ^'HAVING', ! ^'INNER ', ! ^'OUTER ', ! ^'LEFT ', ! ^'RIGHT ', ! ^'JOIN', ! ^'ON', table_name);
+simple_sub_query := AND (OR sub_query1, sub_query2);
+
+join_expression := AND join_level1, ? (AND ws, (OR ^'INNER ', ^'OUTER ', ^'LEFT ', ^'RIGHT ', ''), ^'JOIN', ws, join_level1, ws, ^'ON', ws, level0);
+join_level1 := OR sub_query, bracket_join, table_alias;
+
+parameters_clause := AND CASE 'PARAMETERS', ws, (LIST (AND identifier, ws, identifier, ws, ? (&'(', ws, number, ws, ')')), [&ws, ',', ws]), ';';
+update_clause := AND ws, ^'UPDATE', ws, table_name, ws;
+insert_replace_clause := AND ws, (OR ^'REPLACE', ^'INSERT'), ws, ^'INTO', ws, table_name, ws, ['('], ws, field_list, ws, [')'], ws;
+
+with_clause := AND ws, ^'WITH', (LIST (AND ws, table_name, ws, ^'AS', ws, '(', select_statement, ')', ws), [AND ws, ',', ws]), ws;
+select_clause := AND ws, ^'SELECT', ws, ? (OR ^'DISTINCTROW', ^'DISTINCT'), ws, field_list2, ws;
+into_clause := AND ws, ^'INTO', ws, table_name, ws;
+from_clause := AND ws, ^'FROM', ws, table_list, ws;
+where_clause := AND ws, ^'WHERE', ws, level0, ws;
+group_by_clause := AND ws, ^'GROUP', ws1, ^'BY', ws, field_list_qualified, ws;
+having_clause := AND ws, ^'HAVING', ws, level0, ws;
+order_by_clause := AND ws, ^'ORDER', ws1, ^'BY', ws, field_list_qualified, ws;
+set_clause := AND ws, ^'SET', ws, field_value_list, ws;
+delete_clause := AND ws, CASE 'DELETE', ws, ? (AND ['*'], ws);
+
+update_statement := AND update_clause, set_clause, ? where_clause;
+insert_replace_statement := AND insert_replace_clause, (OR value_list, select_statement);
+delete_statement := AND delete_clause, from_clause, ? where_clause;
+select_statement := AND ? with_clause, select_clause, ? into_clause, ? from_clause, ? where_clause, ? group_by_clause, ? having_clause, ? order_by_clause;
+union_statement := LIST (OR (AND ['('], ws, select_statement, ws, [')']), (AND ws, select_statement, ws)), (AND ws, CASE 'UNION', ws, ? CASE 'ALL', ws);
+
+identifier3 := OR (AND '[', identifier2, ']'), identifier;
+relate_to_list := LIST (AND identifier3, ws, CASE 'TO', ws, identifier3), [AND ws, ',', ws];
+relate_clause := AND ws, CASE 'RELATE', ws, relate_to_list;
+as_clause := OPTIONAL AND ws, CASE 'AS', ws, (OR (AND ['['], identifier2, [']']), (AND ['`'], identifier2, ['`']));
+child_clause := AND ws, ['{'], ws, select_statement, ws, ['}'], ws, as_clause, ws;
+append_list := LIST (AND ws, ['('], ws, (OR child_clause, (AND ['('], ws, shape_command, ws, [')'])), ws, relate_clause, ws, [')'], ws), [AND ws, ',', ws];
+append_clause := AND ws, CASE 'APPEND', ws, append_list;
+shape_clause := AND ws, CASE 'SHAPE', ws, ['{'], ws, select_statement, ws, ['}'], ws, as_clause, ws;
+shape_command := AND shape_clause, append_clause;
+
+footer := [AND ws, ? ';', ws];
+
+sql_statement := OR shape_command, (AND ? parameters_clause, (OR union_statement, update_statement, insert_replace_statement, delete_statement), footer);
+
+ws2 := [REPEAT IN 32, 9 MIN 0];
+sql_index := {REPEAT IN '0' TO '9' MIN 0};
+header := [OR (AND ws2, ^'ssql', sql_index, ws2, '=', ws2, ^'ssql', sql_index, ws2, '&', ws2, 34), (AND ws2, ^'ssql', sql_index, ws2, '=', ws2, 34)];
+sql_text1 := AND REPEAT IN 32 TO 255 UNTIL (OR 34, 13+ 10, EOS), [34];
+sql_text2 := AND REPEAT IN 32 TO 255 UNTIL (OR 13+ 10, EOS), (OR 13+ 10, EOS);
+vb_line := AND header, REPEAT sql_text1, sql_text2;
+vb_sql := REPEAT vb_line;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

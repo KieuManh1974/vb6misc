@@ -1,0 +1,56 @@
+ws := [REPEAT IN 32, '-' MIN 0];
+zero := {OR 
+            ^'zero',
+            ^'oh'};
+unit := {OR 
+            ^'one',
+            ^'two',
+            ^'three',
+            ^'four',
+            ^'five',
+            ^'six',
+            ^'seven',
+            ^'eight',
+            ^'nine'};
+teen := {OR 
+            ^'eleven',
+            ^'twelve',
+            ^'thirteen',
+            ^'fourteen',
+            ^'fifteen',
+            ^'sixteen',
+            ^'seventeen',
+            ^'eighteen',
+            ^'nineteen'};
+ten := {OR 
+            ^'ten',
+            ^'twenty',
+            ^'thirty',
+            ^'fourty',
+            ^'fifty',
+            ^'sixty',
+            ^'seventy',
+            ^'eighty',
+            ^'ninety'};
+hundred := 'hundred';
+thousand := 'thousand';
+million := 'million';
+
+units := OR zero, unit;
+tens := OR teen, (AND ten, ws, ? unit);
+hundreds := AND (OR tens, units), ws, hundred, ws, ? 'and', ws, ? (OR tens, unit);
+thousands := AND (OR hundreds, tens, unit), ws, thousand, ws, ? 'and', ws, ? (OR hundreds, tens, unit);
+millions := AND (OR thousands, hundreds, tens, unit), ws, million, ws, ? 'and', ws, ? (OR thousands, hundreds, tens, unit);
+
+roman_figure := &# 'M' - 0, (|'CD', 'CM', # 'C', 'D', PASS), (|'XL', 'XC', # 'X', 'L', PASS), (|'IV', 'IX', # 'I', 'V', PASS);
+numeric_figure := REPEAT IN '0' - '9';
+number := OR millions, thousands, hundreds, tens, units, roman_figure, numeric_figure;
+
+numbers := REPEAT (AND number, ws);
+
+
+
+
+
+
+

@@ -1,0 +1,28 @@
+0070h var_year
+0072h var_age
+0073h var_a
+0074h var_b
+0075h var_c
+0076h var_k
+0077h var_p
+0078h var_q
+0079h var_M
+007Ah var_N
+007Bh var_const_SOPII DB DFh DB 07h
+007Dh var_const_UAUVS DB 2Bh
+007Eh var_temp_BLWVK
+0C00h
+LDA var_const_SOPII
+STA var_year
+LDA var_const_SOPII+1d
+STA var_year+1d
+LDA var_const_UAUVS
+STA var_age
+LDA var_year
+SEC
+SBC var_age
+STA var_temp_BLWVK
+LDA var_year+1d
+SBC #00h
+STA var_temp_BLWVK+1d
+RTS

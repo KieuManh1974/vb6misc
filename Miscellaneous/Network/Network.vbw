@@ -1,0 +1,9 @@
+Diagram = 88, 116, 640, 741, Z, 22, 29, 812, 654, C
+Position = 44, 58, 834, 683, 
+Relationship = 66, 87, 856, 712, 
+Definition = 110, 145, 662, 770, 
+PositionList = 154, 203, 944, 828, 
+NewString = 198, 261, 683, 886, C, 176, 232, 728, 857, C
+RelationshipList = 22, 29, 812, 654, C
+FileIO = 132, 174, 684, 799, 
+MDIRelationships = 110, 145, 822, 770, C, 0, 0, 712, 625, C

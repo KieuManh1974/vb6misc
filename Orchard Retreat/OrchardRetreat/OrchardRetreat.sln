@@ -1,0 +1,50 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 10.00
+# Visual Studio 2008
+Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "OrchardRetreat", "http://localhost/OrchardRetreat", "{728E3523-7559-412F-A72C-4951C51615FC}"
+	ProjectSection(WebsiteProperties) = preProject
+		TargetFramework = "3.5"
+		ProjectReferences = ""
+		Debug.AspNetCompiler.VirtualPath = "/OrchardRetreat"
+		Debug.AspNetCompiler.PhysicalPath = "c:\inetpub\wwwroot\OrchardRetreat\"
+		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\OrchardRetreat\"
+		Debug.AspNetCompiler.Updateable = "true"
+		Debug.AspNetCompiler.ForceOverwrite = "true"
+		Debug.AspNetCompiler.FixedNames = "false"
+		Debug.AspNetCompiler.Debug = "True"
+		Release.AspNetCompiler.VirtualPath = "/OrchardRetreat"
+		Release.AspNetCompiler.PhysicalPath = "c:\inetpub\wwwroot\OrchardRetreat\"
+		Release.AspNetCompiler.TargetPath = "PrecompiledWeb\OrchardRetreat\"
+		Release.AspNetCompiler.Updateable = "true"
+		Release.AspNetCompiler.ForceOverwrite = "true"
+		Release.AspNetCompiler.FixedNames = "false"
+		Release.AspNetCompiler.Debug = "False"
+		SlnRelativePath = "c:\inetpub\wwwroot\OrchardRetreat\"
+		DefaultWebSiteLanguage = "Visual C#"
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|.NET = Debug|.NET
+		Debug|Any CPU = Debug|Any CPU
+		Debug|Mixed Platforms = Debug|Mixed Platforms
+		Release|.NET = Release|.NET
+		Release|Any CPU = Release|Any CPU
+		Release|Mixed Platforms = Release|Mixed Platforms
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{728E3523-7559-412F-A72C-4951C51615FC}.Debug|.NET.ActiveCfg = Debug|.NET
+		{728E3523-7559-412F-A72C-4951C51615FC}.Debug|.NET.Build.0 = Debug|.NET
+		{728E3523-7559-412F-A72C-4951C51615FC}.Debug|Any CPU.ActiveCfg = Debug|.NET
+		{728E3523-7559-412F-A72C-4951C51615FC}.Debug|Mixed Platforms.ActiveCfg = Debug|.NET
+		{728E3523-7559-412F-A72C-4951C51615FC}.Debug|Mixed Platforms.Build.0 = Debug|.NET
+		{728E3523-7559-412F-A72C-4951C51615FC}.Release|.NET.ActiveCfg = Debug|.NET
+		{728E3523-7559-412F-A72C-4951C51615FC}.Release|.NET.Build.0 = Debug|.NET
+		{728E3523-7559-412F-A72C-4951C51615FC}.Release|Any CPU.ActiveCfg = Debug|.NET
+		{728E3523-7559-412F-A72C-4951C51615FC}.Release|Mixed Platforms.ActiveCfg = Debug|.NET
+		{728E3523-7559-412F-A72C-4951C51615FC}.Release|Mixed Platforms.Build.0 = Debug|.NET
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

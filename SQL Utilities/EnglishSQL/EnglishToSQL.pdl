@@ -1,0 +1,5 @@
+ws := [REPEAT IN 0 - 32];
+property := EXTERNAL FieldAlias;
+object := EXTERNAL TableAlias;
+english := AND object, ws, property;
+

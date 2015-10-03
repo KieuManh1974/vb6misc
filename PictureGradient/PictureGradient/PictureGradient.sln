@@ -1,0 +1,21 @@
+Microsoft Visual Studio Solution File, Format Version 7.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PictureGradient", "PictureGradient.csproj", "{A543EE6D-8C04-41C5-BD48-DE430FB928CD}"
+EndProject
+Global
+	GlobalSection(SolutionConfiguration) = preSolution
+		ConfigName.0 = Debug
+		ConfigName.1 = Release
+	EndGlobalSection
+	GlobalSection(ProjectDependencies) = postSolution
+	EndGlobalSection
+	GlobalSection(ProjectConfiguration) = postSolution
+		{A543EE6D-8C04-41C5-BD48-DE430FB928CD}.Debug.ActiveCfg = Debug|.NET
+		{A543EE6D-8C04-41C5-BD48-DE430FB928CD}.Debug.Build.0 = Debug|.NET
+		{A543EE6D-8C04-41C5-BD48-DE430FB928CD}.Release.ActiveCfg = Release|.NET
+		{A543EE6D-8C04-41C5-BD48-DE430FB928CD}.Release.Build.0 = Release|.NET
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+	EndGlobalSection
+	GlobalSection(ExtensibilityAddIns) = postSolution
+	EndGlobalSection
+EndGlobal

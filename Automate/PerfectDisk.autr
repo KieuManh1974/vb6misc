@@ -1,0 +1,5 @@
+settime 18 Feb 2005 10:30
+perfectdisk.open 'C:\Program Files\Raxco\PerfectDisk\perfectdisk.exe'
+perfectdisk.wait 3
+RETURN
+restoretime

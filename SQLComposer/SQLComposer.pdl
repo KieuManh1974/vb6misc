@@ -1,0 +1,9 @@
+name := # : ^ 'a' - 'z', '0' - '9', '_';
+identifier := LIST name, ['.'] MIN 2 MAX 3;
+expression := REPEAT (AND {REPEAT SKIP UNTIL OR identifier, EOS}, (OR identifier, EOS)) UNTIL EOS;
+function := AND {REPEAT (IN 'A' TO 'Z', '_')}, ['('], {REPEAT (IN CASE 'A' TO 'Z', '_', '0' TO '9')}, [')'];
+
+
+
+
+

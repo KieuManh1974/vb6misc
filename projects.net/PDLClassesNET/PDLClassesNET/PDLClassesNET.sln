@@ -1,0 +1,21 @@
+Microsoft Visual Studio Solution File, Format Version 7.00
+Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "PDLClassesNET", "PDLClassesNET.vbproj", "{E20C70EE-36B1-4D32-B63B-ED0D6F0E1F0D}"
+EndProject
+Global
+	GlobalSection(SolutionConfiguration) = preSolution
+		ConfigName.0 = Debug
+		ConfigName.1 = Release
+	EndGlobalSection
+	GlobalSection(ProjectDependencies) = postSolution
+	EndGlobalSection
+	GlobalSection(ProjectConfiguration) = postSolution
+		{E20C70EE-36B1-4D32-B63B-ED0D6F0E1F0D}.Debug.ActiveCfg = Debug|.NET
+		{E20C70EE-36B1-4D32-B63B-ED0D6F0E1F0D}.Debug.Build.0 = Debug|.NET
+		{E20C70EE-36B1-4D32-B63B-ED0D6F0E1F0D}.Release.ActiveCfg = Release|.NET
+		{E20C70EE-36B1-4D32-B63B-ED0D6F0E1F0D}.Release.Build.0 = Release|.NET
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+	EndGlobalSection
+	GlobalSection(ExtensibilityAddIns) = postSolution
+	EndGlobalSection
+EndGlobal

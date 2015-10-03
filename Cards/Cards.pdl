@@ -1,0 +1,8 @@
+ws := [REPEAT IN 0 TO 32 MIN 0];
+number := IN '2' TO '9', ^ '0jqka';
+suit := IN ^ 'dchs';
+card := OR (&number, suit), number, suit;
+hand := REPEAT (&card, ws);
+
+
+

@@ -1,0 +1,4 @@
+ws omit list in 032 013 011 009 | min 0 | |
+name list in a to z | | |
+contents and ws list name del ws | ws list contents min 0 | ws omit || | |
+

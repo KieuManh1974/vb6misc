@@ -1,0 +1,15 @@
+Form1 = 22, 29, 1046, 636, , 22, 29, 980, 746, C
+clsTableInfo = 88, 116, 1160, 829, C
+clsFieldInfo = 110, 145, 975, 858, C
+clsSQL = 176, 232, 1041, 945, Z
+clsTables = 22, 29, 828, 742, 
+clsFields = 44, 58, 850, 771, C
+modGlobal = 66, 87, 872, 800, C
+clsJoin = 110, 145, 1182, 858, 
+clsSQLLine = 0, 0, 992, 713, C
+clsExpression = 154, 203, 1146, 916, C
+clsExpressions = 0, 0, 726, 713, C
+clsIdentifier = 264, 348, 1256, 1061, 
+clsFieldListLine = 44, 58, 1036, 771, C
+clsDatabases = 176, 232, 821, 853, C
+clsDatabaseInfo = 220, 290, 865, 911, C

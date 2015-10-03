@@ -1,0 +1,26 @@
+identifier  list in 033 TO 255, not ()[] ||., | | |
+newline  in 013 010 | |
+ws  list in 000 to 032 | min 0 | |
+end_statement omit or ; newline non scope non } eos | |
+attribute in ,. | |
+scope  or public private | |
+
+expression  AND ws, LIST (OR identifier, bracket_expression), (OR attribute, ws) |
+bracket_expression  AND ['('], ws, expression, ws, [')'] |
+
+code_block  AND [''], REPEAT code MIN 0, [''] |
+expression_block  AND [''], expression, ? ' |', ws, REPEAT code MIN 0, [''] |
+condition_block  AND [''], expression, [''] |
+
+switch  AND CASE 'switch', ws, ? condition_block, ws, LIST expression_block, ws |
+loop  AND CASE 'loop', ws, ? condition_block, ws, code_block |
+exit  AND CASE 'exit', ws, ? condition_block |
+
+flow  OR exit, loop, switch |
+property  AND ws, ? scope, ws, LIST identifier, ws MIN 2, ws, code_block, ws, end_statement |
+container  AND ws, ? scope, ws, identifier, ws, code_block, ws, end_statement |
+block  OR flow, container, property |
+code  OR block, (AND expression, ? ' |'), ws |
+
+program  AND PASS, PASS, (AND REPEAT code MIN 0), ws, end_statement |
+

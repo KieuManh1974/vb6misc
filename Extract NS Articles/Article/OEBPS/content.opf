@@ -1,0 +1,159 @@
+<?xml version="1.0"?>
+<!DOCTYPE package PUBLIC "+//ISBN 0-9673008-1-9//DTD OEB 1.2 Package//EN"  "http://openebook.org/dtds/oeb-1.2/oebpkg12.dtd">
+<package xmlns="http://www.idpf.org/2007/opf" unique-identifier="bookid" version="2.0">
+<metadata xmlns:dc="http://purl.org/dc/elements/1.1/">
+    <dc:title>New Scientist 20110517</dc:title>
+    <dc:language>en</dc:language>
+    <dc:identifier id="bookid"/>
+    <dc:creator>Guillermo Phillips</dc:creator>
+</metadata>
+<manifest>
+<item id="ncx" href="toc.ncx" media-type="text/xml"/>
+<item id="style" href="stylesheet.css" media-type="text/css"/>
+<item id="pagetemplate" href="page-template.xpgt" media-type="application/vnd.adobe-page-template+xml"/>
+<item id="tableofc" href="toc.html" media-type="text/html"/>
+<item id="article1" href="article1.html" media-type="text/html"/>
+<item id="article2" href="article2.html" media-type="text/html"/>
+<item id="article3" href="article3.html" media-type="text/html"/>
+<item id="article4" href="article4.html" media-type="text/html"/>
+<item id="article5" href="article5.html" media-type="text/html"/>
+<item id="article6" href="article6.html" media-type="text/html"/>
+<item id="article7" href="article7.html" media-type="text/html"/>
+<item id="article8" href="article8.html" media-type="text/html"/>
+<item id="article9" href="article9.html" media-type="text/html"/>
+<item id="article10" href="article10.html" media-type="text/html"/>
+<item id="article11" href="article11.html" media-type="text/html"/>
+<item id="article12" href="article12.html" media-type="text/html"/>
+<item id="article13" href="article13.html" media-type="text/html"/>
+<item id="article14" href="article14.html" media-type="text/html"/>
+<item id="article15" href="article15.html" media-type="text/html"/>
+<item id="article16" href="article16.html" media-type="text/html"/>
+<item id="article17" href="article17.html" media-type="text/html"/>
+<item id="article18" href="article18.html" media-type="text/html"/>
+<item id="article19" href="article19.html" media-type="text/html"/>
+<item id="article20" href="article20.html" media-type="text/html"/>
+<item id="article21" href="article21.html" media-type="text/html"/>
+<item id="article22" href="article22.html" media-type="text/html"/>
+<item id="article23" href="article23.html" media-type="text/html"/>
+<item id="article24" href="article24.html" media-type="text/html"/>
+<item id="article25" href="article25.html" media-type="text/html"/>
+<item id="article26" href="article26.html" media-type="text/html"/>
+<item id="article27" href="article27.html" media-type="text/html"/>
+<item id="article28" href="article28.html" media-type="text/html"/>
+<item id="article29" href="article29.html" media-type="text/html"/>
+<item id="article30" href="article30.html" media-type="text/html"/>
+<item id="article31" href="article31.html" media-type="text/html"/>
+<item id="article32" href="article32.html" media-type="text/html"/>
+<item id="article33" href="article33.html" media-type="text/html"/>
+<item id="article34" href="article34.html" media-type="text/html"/>
+<item id="article35" href="article35.html" media-type="text/html"/>
+<item id="article36" href="article36.html" media-type="text/html"/>
+<item id="article37" href="article37.html" media-type="text/html"/>
+<item id="article38" href="article38.html" media-type="text/html"/>
+<item id="article39" href="article39.html" media-type="text/html"/>
+<item id="article40" href="article40.html" media-type="text/html"/>
+<item id="article41" href="article41.html" media-type="text/html"/>
+<item id="article42" href="article42.html" media-type="text/html"/>
+<item id="article43" href="article43.html" media-type="text/html"/>
+<item id="article44" href="article44.html" media-type="text/html"/>
+<item id="article45" href="article45.html" media-type="text/html"/>
+<item id="article46" href="article46.html" media-type="text/html"/>
+<item id="article47" href="article47.html" media-type="text/html"/>
+<item id="article48" href="article48.html" media-type="text/html"/>
+<item id="article49" href="article49.html" media-type="text/html"/>
+<item id="article50" href="article50.html" media-type="text/html"/>
+<item id="article51" href="article51.html" media-type="text/html"/>
+<item id="article52" href="article52.html" media-type="text/html"/>
+<item id="article53" href="article53.html" media-type="text/html"/>
+<item id="article54" href="article54.html" media-type="text/html"/>
+<item id="article55" href="article55.html" media-type="text/html"/>
+<item id="article56" href="article56.html" media-type="text/html"/>
+<item id="article57" href="article57.html" media-type="text/html"/>
+<item id="article58" href="article58.html" media-type="text/html"/>
+<item id="article59" href="article59.html" media-type="text/html"/>
+<item id="article60" href="article60.html" media-type="text/html"/>
+<item id="article61" href="article61.html" media-type="text/html"/>
+<item id="article62" href="article62.html" media-type="text/html"/>
+<item id="article63" href="article63.html" media-type="text/html"/>
+<item id="article64" href="article64.html" media-type="text/html"/>
+<item id="article65" href="article65.html" media-type="text/html"/>
+<item id="article66" href="article66.html" media-type="text/html"/>
+<item id="article67" href="article67.html" media-type="text/html"/>
+<item id="article68" href="article68.html" media-type="text/html"/>
+<item id="article69" href="article69.html" media-type="text/html"/>
+<item id="article70" href="article70.html" media-type="text/html"/>
+</manifest>
+<spine toc="ncx">
+<itemref idref="tableofc"/>
+<itemref idref="article1"/>
+<itemref idref="article2"/>
+<itemref idref="article3"/>
+<itemref idref="article4"/>
+<itemref idref="article5"/>
+<itemref idref="article6"/>
+<itemref idref="article7"/>
+<itemref idref="article8"/>
+<itemref idref="article9"/>
+<itemref idref="article10"/>
+<itemref idref="article11"/>
+<itemref idref="article12"/>
+<itemref idref="article13"/>
+<itemref idref="article14"/>
+<itemref idref="article15"/>
+<itemref idref="article16"/>
+<itemref idref="article17"/>
+<itemref idref="article18"/>
+<itemref idref="article19"/>
+<itemref idref="article20"/>
+<itemref idref="article21"/>
+<itemref idref="article22"/>
+<itemref idref="article23"/>
+<itemref idref="article24"/>
+<itemref idref="article25"/>
+<itemref idref="article26"/>
+<itemref idref="article27"/>
+<itemref idref="article28"/>
+<itemref idref="article29"/>
+<itemref idref="article30"/>
+<itemref idref="article31"/>
+<itemref idref="article32"/>
+<itemref idref="article33"/>
+<itemref idref="article34"/>
+<itemref idref="article35"/>
+<itemref idref="article36"/>
+<itemref idref="article37"/>
+<itemref idref="article38"/>
+<itemref idref="article39"/>
+<itemref idref="article40"/>
+<itemref idref="article41"/>
+<itemref idref="article42"/>
+<itemref idref="article43"/>
+<itemref idref="article44"/>
+<itemref idref="article45"/>
+<itemref idref="article46"/>
+<itemref idref="article47"/>
+<itemref idref="article48"/>
+<itemref idref="article49"/>
+<itemref idref="article50"/>
+<itemref idref="article51"/>
+<itemref idref="article52"/>
+<itemref idref="article53"/>
+<itemref idref="article54"/>
+<itemref idref="article55"/>
+<itemref idref="article56"/>
+<itemref idref="article57"/>
+<itemref idref="article58"/>
+<itemref idref="article59"/>
+<itemref idref="article60"/>
+<itemref idref="article61"/>
+<itemref idref="article62"/>
+<itemref idref="article63"/>
+<itemref idref="article64"/>
+<itemref idref="article65"/>
+<itemref idref="article66"/>
+<itemref idref="article67"/>
+<itemref idref="article68"/>
+<itemref idref="article69"/>
+<itemref idref="article70"/>
+</spine>
+</package>

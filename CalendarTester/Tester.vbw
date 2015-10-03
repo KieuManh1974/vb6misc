@@ -1,0 +1,11 @@
+clsStats = 22, 29, 620, 582, C
+clsStatItem = 44, 58, 642, 611, C
+IGenerator = 88, 116, 686, 669, 
+Paper = 44, 58, 655, 713, Z, 110, 145, 708, 698, C
+IRender = 132, 174, 730, 727, 
+clsRenderBlocks = 154, 203, 752, 756, 
+Performance = 0, 0, 0, 0, C
+clsAdditionGenerator = 220, 290, 758, 911, 
+clsMonthGenerator = 176, 232, 714, 853, 
+clsWeekdayGenerator = 0, 0, 538, 621, 
+clsDayGenerator = 198, 261, 736, 882, 

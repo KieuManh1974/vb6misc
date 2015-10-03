@@ -1,0 +1,4 @@
+ws  omit list in 000 to 032 | | |
+atom list or \\ |\ | \{ \} in 033 to 255 not {}\ | | | |
+block and omit { list or atom ws block | min 0 | omit } | |
+

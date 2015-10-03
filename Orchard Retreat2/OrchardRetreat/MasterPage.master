@@ -1,0 +1,61 @@
+<%@ Master Language="C#" AutoEventWireup="true" CodeFile="MasterPage.master.cs" Inherits="MasterPage" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" >
+<head runat="server">
+    <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+    <meta name="description" content="Bed and Breakfast in Marden, Kent"/>
+    <meta name="keywords" content="B&amp;B kent, B&amp;B Marden, B&amp;B Orchard, B&amp;B Weald, bed and breakfast kent, bed and breakfast Marden, bed and breakfast Orchard, bed and breakfast Weald, "/>       
+    <meta name="revisit-after" content="14 days"/>
+    <meta name="robots" content="index,follow"/>    
+    <link href="styles.css" type="text/css" rel="stylesheet"/>
+    <title>Orchard Retreat Bed and Breakfast, Kent</title>
+</head>
+<body>
+    <div id="header">        
+        <!-- ORCHARD RETREAT<br />BED &amp; BREAKFAST IN KENT -->
+        <img src="images/orchRet.jpeg" alt="" />
+    </div>
+    <div id="left">
+        <div id="menu">
+            <ul>
+                <li id="mnu_Home" runat="server"><a href="Home.aspx">Home</a></li>
+                <li id="mnu_Location" runat="server"><a href="Location.aspx">Location</a></li>
+                <li id="mnu_PlacesToVisit" runat="server"><a href="PlacesToVisit.aspx">Places to visit</a></li>
+                <li><br /></li>
+                <li id="award"><img alt="Awarded 5* review from EnjoyEngland" src="images/5st Bed & Breakfast.GIF"/></li>
+                <li><br /></li>
+                
+            </ul>
+            
+        </div>
+        
+            
+    </div>
+
+    <div id="middleSection">
+        <form id="form1" runat="server">
+        
+            <asp:contentplaceholder id="ContentPlaceHolder1" runat="server">
+            </asp:contentplaceholder>
+            
+            <div class="centre" style="margin-top:40px;">Site designed by <a href="http://www.codeup.co.uk" target="_blank"><img style="vertical-align:middle" src="http://www.codeup.co.uk/images/codeUpSmall.gif" alt="CodeUp" /></a></div>
+        </form>
+    </div>
+    <div id="right">
+
+        <!-- trip advisor content -->
+        
+        <div id="TA_excellent548" class="TA_excellent">
+            <ul id="EonSIg" class="TA_links Ht8j8mU">
+                <li id="IUMMKDX8oZ" class="uHHIEWXv9B"><a target="_blank" href=http://www.tripadvisor.co.uk/Hotel_Review-g1062700-d1456700-Reviews-Orchard_Retreat-Marden_Kent_England.html>Orchard Retreat</a> rated "excellent" by 2 travellers</li>
+            </ul>
+        </div>
+        <script type="text/javascript" src="http://www.tripadvisor.co.uk/WidgetEmbed-excellent?uniq=548&amp;locationId=1456700&amp;lang=UK"></script> 
+    </div>
+</body>
+</html>
+
+
+

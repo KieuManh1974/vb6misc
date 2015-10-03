@@ -1,0 +1,12 @@
+Form1 = -4, 252, 413, 865, C, 25, 25, 739, 638, 
+CParseText = 300, 300, 717, 913, C
+Module1 = 125, 125, 677, 582, Z
+PCharacterChoice = 175, 175, 727, 632, 
+PCharacterRange = 200, 200, 446, 657, 
+PLiteral = 0, 0, 246, 457, 
+PJoin = 25, 25, 271, 482, 
+PChoice = 50, 50, 296, 507, 
+PRepeat = 75, 75, 321, 532, 
+PRepeatUntil = 100, 100, 346, 557, 
+PNot = 150, 150, 396, 607, 
+IParseObject = 0, 0, 552, 457, C

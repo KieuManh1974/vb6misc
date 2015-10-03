@@ -1,0 +1,5 @@
+class int [0..255]
+class word [0..65535]
+new x word
+new y int
+x*y

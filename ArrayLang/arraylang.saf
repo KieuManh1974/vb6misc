@@ -1,0 +1,20 @@
+ws omit list in 000 to 032 | min 0 | |
+digits list in 0 to 9 | | |
+number_range and digits omit .. digits | |
+range_set  list range del omit || | |
+ranges_set and omit [ list range del omit , | omit ] | |
+
+
+alphanumeric list in 0 to 9 a to z A to Z | | |
+
+
+type_def and alphanumeric ws range_set | |
+declaration1 and range_set ws alphanumeric | |
+declaration2 and alphanumeric ws alphanumeric | |
+declaration or declaration1 declaration2 | |
+set_value and omit { list atom del omit , | omit } | |
+atom or digits alphanumeric set_value | |
+variable and alphanumeric | |
+copy and variable omit : set_value | |
+program list or declaration type_def copy | del ws  | |
+

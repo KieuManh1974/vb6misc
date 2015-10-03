@@ -1,0 +1,39 @@
+ws := [REPEAT IN 32 MIN 0];
+unit := OR CASE 'one',
+            CASE 'two',
+            CASE 'three',
+            CASE 'four',
+            CASE 'five',
+            CASE 'six',
+            CASE 'seven',
+            CASE 'eight',
+            CASE 'nine';
+ten := OR CASE 'ten',
+            CASE 'twenty',
+            CASE 'thirty',
+            CASE 'fourty',
+            CASE 'fifty',
+            CASE 'sixty',
+            CASE 'seventy',
+            CASE 'eighty',
+            CASE 'ninety';
+hundred := CASE 'hundred';
+thousand := CASE 'thousand';
+million := CASE 'million';
+billion := CASE 'billion';
+trillion := CASE 'trillion';
+special := OR CASE 'eleven',
+                CASE 'twelve',
+                CASE 'thirteen',
+                CASE 'fourteen',
+                CASE 'fifteen',
+                CASE 'sixteen',
+                CASE 'seventeen',
+                CASE 'eighteen',
+                CASE 'nineteen';
+number_word := OR unit, ten, hundred, thousand, million, billion, trillion;
+word := REPEAT AND number_word, ws;
+digits := REPEAT IN '0' TO '9';
+number := OR digits, word;
+
+

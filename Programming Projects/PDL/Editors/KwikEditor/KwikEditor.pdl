@@ -1,0 +1,21 @@
+ws := AND ? {REPEAT IN 1 TO 32 UNTIL 13+ 10 MIN 0}, {REPEAT IN 1 TO 32 MIN 0};
+ws2 := [AND (REPEAT IN 1 TO 32 UNTIL OR EOS, 13+ 10 MIN 0), (OR EOS, 13+ 10)];
+name := {AND (IN CASE 'A' TO 'Z', '_'), REPEAT (IN CASE 'A' TO 'Z', '0' TO '9', '_') MIN 0};
+alphanumeric := IN CASE 'A' TO 'Z', '0' TO '9', '_';
+number := {REPEAT IN '0' TO '9'};
+string := AND [39], {REPEAT OR (AND 39, 39), (IN 32 TO 255) UNTIL AND 39, NOT 39}, [39];
+
+
+
+base_types := {OR CASE 'byte', 'bit'};
+expression := number;
+initialise := AND '(', expression, ')';
+size := initialise;
+type := OR base_types, name;
+parameter := AND name, ws, type;
+indexer := LIST parameter, (AND ws, ',', ws);
+
+declare := AND CASE 'var', ws, '.', name, OPTIONAL indexer, ws, type, OPTIONAL initialise;
+
+
+

@@ -1,0 +1,36 @@
+word := {REPEAT OR (IN CASE 'a' TO 'z'), ['['], [']']};
+digits := REPEAT IN '0' TO '9';
+space1 := REPEAT IN ' ';
+space2 := REPEAT IN ' ', '.', '-' MIN 0;
+space3 := REPEAT IN ' ' MIN 0;
+
+name := LIST word, [space1];
+
+filetype := OR CASE 'AVI', CASE 'MPG', CASE 'MPEG';
+extension := AND '.', filetype;
+
+
+part_index1 := AND digits, [space3], [^'of'], [space3], digits;
+part_index2 := AND [^'part'], space3, digits;
+part_index3 := AND [OR ^'episode', ^'e'], [space3], digits;
+season_index := AND [OR ^'season', ^'s'], [space3], digits;
+
+episode_index1 := AND digits, [space3], [^'x'], [space3], digits;
+episode_index2 := AND season_index, [space3], part_index3;
+
+index := AND [? '('], (OR part_index1,
+        part_index2,
+        part_index3,
+        episode_index1,
+        episode_index2,
+        season_index,
+        digits), [? ')'];
+
+description := REPEAT OR index, extension, name, space2;
+
+
+
+
+
+
+

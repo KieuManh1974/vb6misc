@@ -1,0 +1,33 @@
+ws := AND ? {REPEAT IN 1 TO 32 UNTIL 13+ 10 MIN 0}, {REPEAT IN 1 TO 32 MIN 0};
+ws2 := [AND (REPEAT IN 1 TO 32 UNTIL OR EOS, 13+ 10 MIN 0), (OR EOS, 13+ 10)];
+variable := AND (IN CASE 'A' TO 'Z', '_'), REPEAT (IN CASE 'A' TO 'Z', '0' TO '9', '_') MIN 0;
+nonalpha := IN CASE 'A' TO 'Z', '0' TO '9', '_';
+number := REPEAT IN '0' TO '9' MAX 3;
+string := AND 39, (REPEAT OR (AND 39, 39), (IN 32 TO 255) UNTIL AND 39, NOT 39), 39;
+st_literal := AND OPTIONAL (AND (OR CASE 'CASE', '^'), ws), (LIST (OR number, string), (AND '+', ws));
+char := OR number, (AND 39, (IN 32 TO 255, NOT 39), 39);
+range := AND char, ws, (OR CASE 'TO', '-'), ws, char;
+st_in := AND (OR CASE 'IN', '>'), ws, (LIST (AND (OPTIONAL (OR CASE 'NOT', '!')), ws, (OPTIONAL (OR CASE 'CASE', '^')), ws, (OR range, number, string)), (AND ',', ws));
+st_not := AND (OR (AND (CASE 'NOT'), NOT nonalpha), '!'), ws, expression;
+st_and := AND (OR (AND (CASE 'AND'), NOT nonalpha), '&'), ws, (LIST expression, (AND ws, ',', ws) MIN 1);
+st_or := AND (OR (AND (CASE 'OR'), NOT nonalpha), '|'), ws, (LIST expression, (AND ws, ',', ws) MIN 1);
+st_repeat := AND (OR (AND (CASE 'REPEAT'), NOT nonalpha), '#'), ws, expression,
+            (OPTIONAL AND ws, (OR CASE 'UNTIL', ':'), ws, expression),
+            (OPTIONAL AND ws, (OR CASE 'MIN', '-'), ws, number), (OPTIONAL AND ws, (OR CASE 'MAX', '+'), ws, number);
+
+st_list := AND (OR (AND (CASE 'LIST'), NOT nonalpha), '@'), ws, expression, ws, ',', ws, expression,
+           (OPTIONAL AND ws, (OR CASE 'MIN', '-'), ws, number), (OPTIONAL AND ws, (OR CASE 'MAX', '+'), ws, number);
+st_optional := AND (OR (AND (CASE 'OPTIONAL'), NOT nonalpha), '?'), ws, expression;
+parameter_string := {REPEAT IN 'A' TO 'Z', 'a' TO 'z', '_'};
+parameter_list := LIST parameter_string, [','];
+st_external := AND (OR (AND (CASE 'EXTERNAL'), NOT nonalpha), '='), ws, variable, (OPTIONAL AND ['('], parameter_list, [')']);
+expression_b := AND '(', ws, expression_sub, ws, ')';
+expression_sb := AND '[', ws, expression_sub, ws, ']';
+expression_cb := AND '{', ws, expression_sub, ws, '}';
+expression := OR expression_b, expression_sb, expression_cb, expression_sub;
+expression_sub := OR st_literal, st_and, st_or, st_repeat, st_list, st_in, st_optional, st_not, (OR CASE 'EOS', '||'), (OR CASE 'PASS', '*'), (OR CASE 'FAIL', '~'), st_external, variable;
+statement := AND REPEAT 32 MIN 0, variable, ws, ':=', ws, expression, ws, ';', ws2;
+endofstatement := AND [REPEAT IN 32 TO 255, NOT ';'], ';', ws, EOS;
+
+strip_quotes := {AND [? '""'], REPEAT IN 32 TO 255 UNTIL (OR EOS, '""')};
+

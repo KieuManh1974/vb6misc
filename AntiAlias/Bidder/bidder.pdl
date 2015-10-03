@@ -1,0 +1,14 @@
+ws := [REPEAT IN 0 - 32];
+ws2 := [REPEAT IN 0 - 32, ',s' MIN 0];
+figure := {REPEAT IN '0' - '9'};
+month := OR 'Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec';
+amount := AND (OR '£', '$'), REPEAT (OR (IN '0' - '9', '.'), [',']);
+date := AND figure, '-', month, '-', figure, <ws>, figure, ':', figure, ':', figure;
+datum := OR amount, date, (OR time_left4, time_left3, time_left2, time_left1);
+time_left1 := AND figure, ws2, ['day'], ws2, figure, ws2, ['hour'], ws2, figure, ws2, ['minute'], ws2, figure, ws2, ['econd'];
+time_left2 := AND figure, ws2, ['hour'], ws2, figure, ws2, ['minute'], ws2, figure, ws2, ['econd'];
+time_left3 := AND figure, ws2, ['minute'], ws2, figure, ws2, ['econd'];
+time_left4 := AND figure, ws2, ['econd'];
+data := REPEAT AND [REPEAT SKIP UNTIL OR datum, EOS], (OR datum, EOS) UNTIL EOS;
+
+

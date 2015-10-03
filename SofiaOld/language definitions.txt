@@ -1,0 +1,40 @@
+Definition:
+[mod] [type] name [block]
+[mod] [type] [block] name
+[mod] [type] name [block] name
+
+Control Flow
+if{condition, statements} else[if]{condition, statements}
+loop{statements}
+while{condition, statements}
+for{start,end,increment,statements}
+return{statement}
+exit
+
+Disambiguity operators
+; , . () space newline
+
+Scope Modifiers
+public
+private
+
+Identifier types
+Scope Modifiers
+Control Flow
+Variables
+Classes/Functions
+
+Any non-definition is a statement
+
+Scope Rules
+Any identifier in the block or container blocks are visible.
+Any public identifiers in sub-blocks are visible.
+An identifier in a deeper block will mask that in its container block.
+
+Ambiguity Resolution Rules
+Longest identifiers take precedence
+Modifiers/Control Flow
+Variables
+Classes/Functions
+Parameters
+

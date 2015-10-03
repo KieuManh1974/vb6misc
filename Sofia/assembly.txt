@@ -1,0 +1,27 @@
+0000h main_x DB 00h
+0200h
+main
+LDA #FAh
+STA stack,X
+INX
+DEX
+LDA stack,X
+STA main_x
+LDA main_x
+STA stack,X
+INX
+LDA #01h
+STA stack,X
+INX
+DEX
+LDA stack,X
+DEX
+ADC stack,X
+STA stack,X
+INX
+DEX
+LDA stack,X
+STA main_x
+RTS
+stack
+FFFCh DW 0200h

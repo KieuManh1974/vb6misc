@@ -1,0 +1,13 @@
+clsStats = 0, 0, 767, 621, 
+clsStatItem = 0, 0, 0, 0, C
+Paper = 88, 116, 921, 537, Z, 22, 29, 789, 650, C
+Performance = 0, 0, 0, 0, C
+IQuestion = 154, 203, 720, 824, C
+clsDay = 154, 203, 720, 824, 
+clsMonth = 132, 174, 698, 795, 
+clsAdd = 66, 87, 632, 708, C
+clsYear = 132, 174, 698, 795, C
+clsDecadeMonthDay = 0, 0, 573, 621, 
+clsWeekday = 154, 203, 689, 824, 
+clsDecadeYearPos = 154, 203, 921, 824, 
+clsMonthDay = 220, 290, 992, 911, 

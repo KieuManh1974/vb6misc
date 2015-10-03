@@ -1,0 +1,13 @@
+ws omit list in 032 009 | min 0 | |
+newline omit list in 013 010 | | |
+alpha list in a to z A to Z | | |
+numeric list in 0 to 9 | | |
+alphanumeric list in 0 to 9 a to z A to Z | | |
+identifier and alpha list alphanumeric min 0 | | |
+type or SHORT USHORT INT UINT | |
+declaration and type ws identifier | |
+function and identifier omit ( list expression0 del , min 0 | omit ) | |
+unary and in ?-_ | expression0 | |
+expression1 or unary function identifier numeric | |
+expression0 list expression1 del in +- | | |
+block list or declaration expression0 | del newline | |
